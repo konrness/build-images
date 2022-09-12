@@ -41,3 +41,12 @@ pipeline:
                     context: testrail
                     labels:
                       build_id: <+pipeline.sequenceId>
+              - step:
+                  type: Run
+                  name: Test
+                  identifier: Test
+                  spec:
+                    connectorRef: konrness_Docker_Hub
+                    image: konrness/testrail:latest
+                    shell: Sh
+                    command: testrail --version

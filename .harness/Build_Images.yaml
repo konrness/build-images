@@ -21,7 +21,7 @@ pipeline:
           infrastructure:
             type: KubernetesDirect
             spec:
-              connectorRef: account.k8scidemo
+              connectorRef: account.cidemo
               namespace: default
               automountServiceAccountToken: true
               nodeSelector: {}

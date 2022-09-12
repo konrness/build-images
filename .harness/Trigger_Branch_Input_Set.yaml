@@ -1,0 +1,14 @@
+inputSet:
+  identifier: "Trigger_Branch"
+  name: "Trigger Branch"
+  orgIdentifier: "SE_Sandbox"
+  projectIdentifier: "Konr"
+  pipeline:
+    identifier: "Build_Images"
+    properties:
+      ci:
+        codebase:
+          build:
+            type: "branch"
+            spec:
+              branch: "<+trigger.branch>"

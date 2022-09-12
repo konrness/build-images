@@ -1,0 +1,40 @@
+pipeline:
+  name: Build Images
+  identifier: Build_Images
+  projectIdentifier: Konr
+  orgIdentifier: SE_Sandbox
+  tags: {}
+  properties:
+    ci:
+      codebase:
+        connectorRef: Konr_Github
+        repoName: build-images
+        build: <+input>
+  stages:
+    - stage:
+        name: Build
+        identifier: Build
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          infrastructure:
+            type: KubernetesDirect
+            spec:
+              connectorRef: account.k8scidemose
+              namespace: default
+              automountServiceAccountToken: true
+              nodeSelector: {}
+              os: Linux
+          execution:
+            steps:
+              - step:
+                  type: BuildAndPushDockerRegistry
+                  name: TestRail
+                  identifier: TestRail
+                  spec:
+                    connectorRef: konrness_Docker_Hub
+                    repo: konrness/testrail
+                    tags:
+                      - latest
+                    context: testrail

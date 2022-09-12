@@ -22,7 +22,7 @@ pipeline:
             type: KubernetesDirect
             spec:
               connectorRef: account.k8scidemose
-              namespace: default
+              namespace: build
               automountServiceAccountToken: true
               nodeSelector: {}
               os: Linux

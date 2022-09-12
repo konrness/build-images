@@ -37,6 +37,7 @@ pipeline:
                     repo: konrness/testrail
                     tags:
                       - latest
+                      - 0.<+pipeline.sequenceId>
                     dockerfile: testrail/Dockerfile
                     context: testrail
                     labels:
@@ -56,7 +57,7 @@ pipeline:
                   identifier: TestRail
                   spec:
                     connectorRef: konrness_Docker_Hub
-                    image: konrness/testrail:latest
+                    image: konrness/testrail:0.<+pipeline.sequenceId>
                     shell: Sh
                     command: trcli --help
           infrastructure:

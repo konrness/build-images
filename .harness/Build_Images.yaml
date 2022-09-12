@@ -37,4 +37,7 @@ pipeline:
                     repo: konrness/testrail
                     tags:
                       - latest
+                    dockerfile: testrail/Dockerfile
                     context: testrail
+                    labels:
+                      build_id: <+pipeline.sequenceId>

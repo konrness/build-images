@@ -41,12 +41,23 @@ pipeline:
                     context: testrail
                     labels:
                       build_id: <+pipeline.sequenceId>
+    - stage:
+        name: Test
+        identifier: Test
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: false
+          execution:
+            steps:
               - step:
                   type: Run
-                  name: Test
-                  identifier: Test
+                  name: TestRail
+                  identifier: TestRail
                   spec:
                     connectorRef: konrness_Docker_Hub
                     image: konrness/testrail:latest
                     shell: Sh
-                    command: testrail --version
+                    command: trcli --help
+          infrastructure:
+            useFromStage: Build

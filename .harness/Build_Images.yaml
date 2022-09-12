@@ -42,8 +42,6 @@ pipeline:
                     context: testrail
                     labels:
                       build_id: <+pipeline.sequenceId>
-                      source: <+codebase.repoUrl>
-                      author: <+codebase.gitUserEmail>
     - stage:
         name: Test
         identifier: Test

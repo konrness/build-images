@@ -48,7 +48,7 @@ pipeline:
         description: ""
         type: CI
         spec:
-          cloneCodebase: false
+          cloneCodebase: true
           execution:
             steps:
               - step:
@@ -59,6 +59,8 @@ pipeline:
                     connectorRef: konrness_Docker_Hub
                     image: konrness/testrail:0.<+pipeline.sequenceId>
                     shell: Sh
-                    command: trcli --help
+                    command: |-
+                      cd testrail
+                      test.sh
           infrastructure:
             useFromStage: Build

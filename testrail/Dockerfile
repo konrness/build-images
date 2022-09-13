@@ -5,4 +5,4 @@ LABEL source="https://github.com/konrness/build-images"
 
 WORKDIR /usr/src/app
 
-RUN pip install --no-cache-dir trcli
+RUN pip install --no-cache-dir trcli testrail-api

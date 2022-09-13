@@ -71,11 +71,13 @@ pipeline:
                     command: |-
                       while ! docker ps ;do
                           echo "Docker not availble yet"
+                          sleep 1
                       done
                       echo "Docker DiND ready"
 
                       docker tag konrness/testrail:0.<+pipeline.sequenceId> konrness/testrail:latest
                       docker push konrness/testrail:latest
+                    privileged: true
           infrastructure:
             useFromStage: Build
           sharedPaths:
@@ -86,5 +88,5 @@ pipeline:
               type: Service
               spec:
                 connectorRef: konrness_Docker_Hub
-                image: docker:latest
+                image: docker:dind
                 privileged: true

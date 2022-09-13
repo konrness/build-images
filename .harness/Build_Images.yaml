@@ -61,6 +61,6 @@ pipeline:
                     shell: Sh
                     command: |-
                       cd testrail
-                      test.sh
+                      ./test.sh
           infrastructure:
             useFromStage: Build

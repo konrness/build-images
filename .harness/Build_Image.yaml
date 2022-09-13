@@ -74,7 +74,7 @@ pipeline:
                       echo "Docker DiND ready"
 
                       # Login
-                      echo <+stage.variables.docker_password> > my_password.txt
+                      echo <+stage.variables.docker_password> > docker_password.txt
                       cat docker_password.txt | docker login -u konrness --password-stdin
 
                       # Pull and Retag latest
@@ -108,6 +108,4 @@ pipeline:
     - name: name
       type: String
       value: <+input>.allowedValues(testrail)
-  connectorRef: ""
   storeType: ""
-  filePath: .harness/Build_Image.yaml

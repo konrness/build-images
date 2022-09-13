@@ -75,6 +75,7 @@ pipeline:
                       done
                       echo "Docker DiND ready"
 
+                      docker pull konrness/testrail:0.<+pipeline.sequenceId>
                       docker tag konrness/testrail:0.<+pipeline.sequenceId> konrness/testrail:latest
                       docker push konrness/testrail:latest
                     privileged: true

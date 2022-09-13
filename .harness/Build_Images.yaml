@@ -36,7 +36,6 @@ pipeline:
                     connectorRef: konrness_Docker_Hub
                     repo: konrness/testrail
                     tags:
-                      - latest
                       - 0.<+pipeline.sequenceId>
                     dockerfile: testrail/Dockerfile
                     context: testrail
@@ -45,7 +44,6 @@ pipeline:
     - stage:
         name: Test
         identifier: Test
-        description: ""
         type: CI
         spec:
           cloneCodebase: true
@@ -62,5 +60,26 @@ pipeline:
                     command: |-
                       cd testrail
                       ./test.sh
+              - step:
+                  type: Run
+                  name: Retag latest
+                  identifier: Retag_latest
+                  spec:
+                    connectorRef: konrness_Docker_Hub
+                    image: docker:latest
+                    shell: Sh
+                    command: |-
+                      docker tag konrness/testrail:0.<+pipeline.sequenceId> konrness/testrail:latest
+                      docker push konrness/testrail:latest
           infrastructure:
             useFromStage: Build
+          sharedPaths:
+            - /var/run
+          serviceDependencies:
+            - identifier: dind
+              name: dind
+              type: Service
+              spec:
+                connectorRef: konrness_Docker_Hub
+                image: docker:latest
+                privileged: true

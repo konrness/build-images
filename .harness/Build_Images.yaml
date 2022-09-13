@@ -69,6 +69,11 @@ pipeline:
                     image: docker:latest
                     shell: Sh
                     command: |-
+                      while ! docker ps ;do
+                          echo "Docker not availble yet"
+                      done
+                      echo "Docker DiND ready"
+
                       docker tag konrness/testrail:0.<+pipeline.sequenceId> konrness/testrail:latest
                       docker push konrness/testrail:latest
           infrastructure:

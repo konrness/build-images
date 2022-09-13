@@ -75,7 +75,11 @@ pipeline:
                       done
                       echo "Docker DiND ready"
 
-                      docker login -u konrness -p <+stage.variables.docker_password>
+                      # Login
+                      echo <+stage.variables.docker_password> > my_password.txt
+                      cat docker_password.txt | docker login -u konrness --password-stdin
+
+                      # Pull and Retag latest
                       docker pull konrness/testrail:0.<+pipeline.sequenceId>
                       docker tag konrness/testrail:0.<+pipeline.sequenceId> konrness/testrail:latest
                       docker push konrness/testrail:latest

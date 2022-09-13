@@ -75,6 +75,7 @@ pipeline:
                       done
                       echo "Docker DiND ready"
 
+                      docker login -u konrness -p <+stage.variables.docker_password>
                       docker pull konrness/testrail:0.<+pipeline.sequenceId>
                       docker tag konrness/testrail:0.<+pipeline.sequenceId> konrness/testrail:latest
                       docker push konrness/testrail:latest
@@ -91,3 +92,10 @@ pipeline:
                 connectorRef: konrness_Docker_Hub
                 image: docker:dind
                 privileged: true
+        variables:
+          - name: docker_username
+            type: String
+            value: konrness
+          - name: docker_password
+            type: Secret
+            value: konrness_DockerHub

@@ -84,6 +84,7 @@ pipeline:
             useFromStage: Build
           sharedPaths:
             - /var/run
+            - /var/lib/docker
           serviceDependencies:
             - identifier: dind
               name: dind

@@ -1,97 +1,113 @@
----
 pipeline:
-  projectIdentifier: "Konr"
-  orgIdentifier: "SE_Sandbox"
+  projectIdentifier: Konr
+  orgIdentifier: SE_Sandbox
   tags: {}
   properties:
     ci:
       codebase:
-        connectorRef: "Konr_Github"
-        repoName: "build-images"
-        build: "<+input>"
+        connectorRef: Konr_Github
+        repoName: build-images
+        build: <+input>
   stages:
-  - stage:
-      name: "Build"
-      identifier: "Build"
-      description: ""
-      type: "CI"
-      spec:
-        cloneCodebase: true
-        infrastructure:
-          type: "KubernetesDirect"
-          spec:
-            connectorRef: "account.cidemo"
-            namespace: "default"
-            automountServiceAccountToken: true
-            nodeSelector: {}
-            os: "Linux"
-        execution:
-          steps:
-          - step:
-              type: "BuildAndPushDockerRegistry"
-              name: "TestRail"
-              identifier: "TestRail"
+    - stage:
+        name: Build
+        identifier: Build
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          infrastructure:
+            type: KubernetesDirect
+            spec:
+              connectorRef: account.cidemo
+              namespace: default
+              automountServiceAccountToken: true
+              nodeSelector: {}
+              os: Linux
+          execution:
+            steps:
+              - step:
+                  type: BuildAndPushDockerRegistry
+                  name: Build Image
+                  identifier: BuildImage
+                  spec:
+                    connectorRef: konrness_Docker_Hub
+                    repo: konrness/<+pipeline.variables.name>
+                    tags:
+                      - 0.<+pipeline.sequenceId>
+                    dockerfile: <+pipeline.variables.name>/Dockerfile
+                    context: <+pipeline.variables.name>
+                    labels:
+                      build_id: <+pipeline.sequenceId>
+    - stage:
+        name: Test
+        identifier: Test
+        type: CI
+        spec:
+          cloneCodebase: true
+          execution:
+            steps:
+              - step:
+                  type: Run
+                  name: Test
+                  identifier: TestScript
+                  spec:
+                    connectorRef: konrness_Docker_Hub
+                    image: konrness/<+pipeline.variables.name>:0.<+pipeline.sequenceId>
+                    shell: Sh
+                    command: |-
+                      cd <+pipeline.variables.name>
+                      ./test.sh
+              - step:
+                  type: Run
+                  name: Retag latest
+                  identifier: Retag_latest
+                  spec:
+                    connectorRef: konrness_Docker_Hub
+                    image: docker:latest
+                    shell: Sh
+                    command: |-
+                      while ! docker ps ;do
+                          echo "Docker not availble yet"
+                          sleep 1
+                      done
+                      echo "Docker DiND ready"
+
+                      # Login
+                      echo <+stage.variables.docker_password> > my_password.txt
+                      cat docker_password.txt | docker login -u konrness --password-stdin
+
+                      # Pull and Retag latest
+                      docker pull konrness/<+pipeline.variables.name>:0.<+pipeline.sequenceId>
+                      docker tag konrness/<+pipeline.variables.name>:0.<+pipeline.sequenceId> konrness/<+pipeline.variables.name>:latest
+                      docker push konrness/<+pipeline.variables.name>:latest
+                    privileged: true
+          infrastructure:
+            useFromStage: Build
+          sharedPaths:
+            - /var/run
+            - /var/lib/docker
+          serviceDependencies:
+            - identifier: dind
+              name: dind
+              type: Service
               spec:
-                connectorRef: "konrness_Docker_Hub"
-                repo: "konrness/testrail"
-                tags:
-                - "0.<+pipeline.sequenceId>"
-                dockerfile: "testrail/Dockerfile"
-                context: "testrail"
-                labels:
-                  build_id: "<+pipeline.sequenceId>"
-  - stage:
-      name: "Test"
-      identifier: "Test"
-      type: "CI"
-      spec:
-        cloneCodebase: true
-        execution:
-          steps:
-          - step:
-              type: "Run"
-              name: "TestRail"
-              identifier: "TestRail"
-              spec:
-                connectorRef: "konrness_Docker_Hub"
-                image: "konrness/testrail:0.<+pipeline.sequenceId>"
-                shell: "Sh"
-                command: "cd testrail\n./test.sh"
-          - step:
-              type: "Run"
-              name: "Retag latest"
-              identifier: "Retag_latest"
-              spec:
-                connectorRef: "konrness_Docker_Hub"
-                image: "docker:latest"
-                shell: "Sh"
-                command: "while ! docker ps ;do\n    echo \"Docker not availble yet\"\
-                  \n    sleep 1\ndone\necho \"Docker DiND ready\"\n\n# Login\necho\
-                  \ <+stage.variables.docker_password> > my_password.txt\ncat docker_password.txt\
-                  \ | docker login -u konrness --password-stdin\n\n# Pull and Retag\
-                  \ latest\ndocker pull konrness/testrail:0.<+pipeline.sequenceId>\n\
-                  docker tag konrness/testrail:0.<+pipeline.sequenceId> konrness/testrail:latest\n\
-                  docker push konrness/testrail:latest"
+                connectorRef: konrness_Docker_Hub
+                image: docker:dind
                 privileged: true
-        infrastructure:
-          useFromStage: "Build"
-        sharedPaths:
-        - "/var/run"
-        - "/var/lib/docker"
-        serviceDependencies:
-        - identifier: "dind"
-          name: "dind"
-          type: "Service"
-          spec:
-            connectorRef: "konrness_Docker_Hub"
-            image: "docker:dind"
-            privileged: true
-      variables:
-      - name: "docker_username"
-        type: "String"
-        value: "konrness"
-      - name: "docker_password"
-        type: "Secret"
-        value: "konrness_DockerHub"
-  identifier: "Build_Image"
-  name: "Build Image"
+        variables:
+          - name: docker_username
+            type: String
+            value: konrness
+          - name: docker_password
+            type: Secret
+            value: konrness_DockerHub
+  identifier: Build_Image
+  name: Build Image
+  variables:
+    - name: name
+      type: String
+      value: <+input>.allowedValues(testrail)
+  connectorRef: ""
+  storeType: ""
+  filePath: .harness/Build_Image.yaml

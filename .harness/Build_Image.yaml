@@ -57,6 +57,7 @@ pipeline:
                     shell: Sh
                     command: |-
                       if [ -d <+pipeline.variables.name>/tests/ ]
+                      then
                         cd <+pipeline.variables.name>/tests/
                         ./test.sh
                       fi

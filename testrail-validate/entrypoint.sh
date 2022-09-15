@@ -71,4 +71,5 @@ if [[ $exitcode -eq 0 ]]; then
     echo "-- Successfully finished TestRail"
 else
     echo "-- Error running TestRail"
+    exit 1
 fi

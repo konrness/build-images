@@ -56,8 +56,10 @@ pipeline:
                     image: konrness/<+pipeline.variables.name>:0.<+pipeline.sequenceId>
                     shell: Sh
                     command: |-
-                      cd <+pipeline.variables.name>
-                      ./test.sh
+                      if [ -d <+pipeline.variables.name>/tests/ ]
+                        cd <+pipeline.variables.name>/tests/
+                        ./test.sh
+                      fi
               - step:
                   type: Run
                   name: Retag latest

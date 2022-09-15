@@ -60,6 +60,8 @@ pipeline:
                       then
                         cd <+pipeline.variables.name>/tests/
                         ./test.sh
+                      else
+                        echo "No Tests"
                       fi
               - step:
                   type: Run

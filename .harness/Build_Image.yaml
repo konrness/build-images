@@ -139,3 +139,4 @@ pipeline:
       type: String
       value: <+input>.allowedValues(testrail,testrail-validate)
   storeType: ""
+  allowStageExecutions: true

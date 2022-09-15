@@ -78,6 +78,12 @@ pipeline:
                       run_id: "2"
                       fail_on_priority: "2"
                       failed_status_id: "5"
+                  failureStrategies:
+                    - onFailure:
+                        errors:
+                          - Unknown
+                        action:
+                          type: Ignore
               - step:
                   type: Run
                   name: Retag latest

@@ -39,6 +39,7 @@ pipeline:
                     context: <+pipeline.variables.name>
                     labels:
                       build_id: <+pipeline.sequenceId>
+                    remoteCacheRepo: build-image-cache
     - stage:
         name: Test
         identifier: Test
@@ -78,6 +79,12 @@ pipeline:
                       run_id: "2"
                       fail_on_priority: "2"
                       failed_status_id: "5"
+                  failureStrategies:
+                    - onFailure:
+                        errors:
+                          - Unknown
+                        action:
+                          type: Ignore
               - step:
                   type: Run
                   name: Retag latest

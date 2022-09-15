@@ -64,6 +64,21 @@ pipeline:
                         echo "No Tests"
                       fi
               - step:
+                  type: Plugin
+                  name: Plugin
+                  identifier: Plugin
+                  spec:
+                    connectorRef: konrness_Docker_Hub
+                    image: konrness/testrail-validate
+                    settings:
+                      host: https://konrtest.testrail.io
+                      user: konrness@gmail.com
+                      password: <+stage.variables.testrail_password>
+                      debug: "true"
+                      run_id: "2"
+                      fail_on_priority: "2"
+                      failed_status_id: "5"
+              - step:
                   type: Run
                   name: Retag latest
                   identifier: Retag_latest
@@ -107,6 +122,9 @@ pipeline:
           - name: docker_password
             type: Secret
             value: konrness_DockerHub
+          - name: testrail_password
+            type: Secret
+            value: TestRail_Password
   identifier: Build_Image
   name: Build Image
   variables:

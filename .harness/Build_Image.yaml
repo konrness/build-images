@@ -1,6 +1,4 @@
 pipeline:
-  name: Build Images
-  identifier: Build_Images
   projectIdentifier: Konr
   orgIdentifier: SE_Sandbox
   tags: {}
@@ -30,15 +28,15 @@ pipeline:
             steps:
               - step:
                   type: BuildAndPushDockerRegistry
-                  name: TestRail
-                  identifier: TestRail
+                  name: Build Image
+                  identifier: BuildImage
                   spec:
                     connectorRef: konrness_Docker_Hub
-                    repo: konrness/testrail
+                    repo: konrness/<+pipeline.variables.name>
                     tags:
                       - 0.<+pipeline.sequenceId>
-                    dockerfile: testrail/Dockerfile
-                    context: testrail
+                    dockerfile: <+pipeline.variables.name>/Dockerfile
+                    context: <+pipeline.variables.name>
                     labels:
                       build_id: <+pipeline.sequenceId>
     - stage:
@@ -51,14 +49,14 @@ pipeline:
             steps:
               - step:
                   type: Run
-                  name: TestRail
-                  identifier: TestRail
+                  name: Test
+                  identifier: TestScript
                   spec:
                     connectorRef: konrness_Docker_Hub
-                    image: konrness/testrail:0.<+pipeline.sequenceId>
+                    image: konrness/<+pipeline.variables.name>:0.<+pipeline.sequenceId>
                     shell: Sh
                     command: |-
-                      cd testrail
+                      cd <+pipeline.variables.name>
                       ./test.sh
               - step:
                   type: Run
@@ -76,13 +74,13 @@ pipeline:
                       echo "Docker DiND ready"
 
                       # Login
-                      echo <+stage.variables.docker_password> > my_password.txt
+                      echo <+stage.variables.docker_password> > docker_password.txt
                       cat docker_password.txt | docker login -u konrness --password-stdin
 
                       # Pull and Retag latest
-                      docker pull konrness/testrail:0.<+pipeline.sequenceId>
-                      docker tag konrness/testrail:0.<+pipeline.sequenceId> konrness/testrail:latest
-                      docker push konrness/testrail:latest
+                      docker pull konrness/<+pipeline.variables.name>:0.<+pipeline.sequenceId>
+                      docker tag konrness/<+pipeline.variables.name>:0.<+pipeline.sequenceId> konrness/<+pipeline.variables.name>:latest
+                      docker push konrness/<+pipeline.variables.name>:latest
                     privileged: true
           infrastructure:
             useFromStage: Build
@@ -104,3 +102,10 @@ pipeline:
           - name: docker_password
             type: Secret
             value: konrness_DockerHub
+  identifier: Build_Image
+  name: Build Image
+  variables:
+    - name: name
+      type: String
+      value: <+input>.allowedValues(testrail)
+  storeType: ""

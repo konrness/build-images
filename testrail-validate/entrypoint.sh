@@ -58,7 +58,7 @@ if [[ $PLUGIN_DEBUG = "true" ]]; then
     echo "-- DEBUG:   PLUGIN_FAILED_STATUS_ID=$PLUGIN_FAILED_STATUS_ID"
 fi
 
-exitcode=`python3 testrail.py &> output.log; echo $?`
+exitcode=`python3 /bin/testrail.py &> output.log; echo $?`
 
 if [[ $PLUGIN_DEBUG = "true" ]]; then
     cat output.log

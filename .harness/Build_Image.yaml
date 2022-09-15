@@ -109,5 +109,5 @@ pipeline:
   variables:
     - name: name
       type: String
-      value: <+input>.allowedValues(testrail)
+      value: <+input>.allowedValues(testrail,testrail-validate)
   storeType: ""

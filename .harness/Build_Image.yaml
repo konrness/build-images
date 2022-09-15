@@ -69,7 +69,7 @@ pipeline:
                   identifier: Plugin
                   spec:
                     connectorRef: konrness_Docker_Hub
-                    image: konrness/testrail-validate
+                    image: konrness/testrail-validate:0.<+pipeline.sequenceId>
                     settings:
                       host: https://konrtest.testrail.io
                       user: konrness@gmail.com

@@ -39,7 +39,7 @@ pipeline:
                     context: <+pipeline.variables.name>
                     labels:
                       build_id: <+pipeline.sequenceId>
-                    remoteCacheRepo: build-image-cache
+                    remoteCacheRepo: konrness/harness-build-layer-cache
     - stage:
         name: Test
         identifier: Test
@@ -139,3 +139,4 @@ pipeline:
       type: String
       value: <+input>.allowedValues(testrail,testrail-validate)
   storeType: ""
+  allowStageExecutions: true

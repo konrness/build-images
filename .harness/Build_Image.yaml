@@ -137,6 +137,6 @@ pipeline:
   variables:
     - name: name
       type: String
-      value: <+input>.allowedValues(testrail,testrail-validate)
+      value: <+input>.allowedValues(testrail,testrail-validate,debug)
   storeType: ""
   allowStageExecutions: true

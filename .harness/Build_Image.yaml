@@ -42,7 +42,7 @@ pipeline:
                     remoteCacheRepo: konrness/harness-build-layer-cache
                     resources:
                       limits:
-                        memory: 1G
+                        memory: 1.5G
                         cpu: "1"
     - stage:
         name: Test

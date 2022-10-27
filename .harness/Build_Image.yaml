@@ -40,6 +40,10 @@ pipeline:
                     labels:
                       build_id: <+pipeline.sequenceId>
                     remoteCacheRepo: konrness/harness-build-layer-cache
+                    resources:
+                      limits:
+                        memory: 1G
+                        cpu: "1"
     - stage:
         name: Test
         identifier: Test

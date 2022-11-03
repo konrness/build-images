@@ -1,0 +1,108 @@
+{
+	"kics_version": "v1.6.3",
+	"files_scanned": 1,
+	"lines_scanned": 13,
+	"files_parsed": 1,
+	"lines_parsed": 13,
+	"files_failed_to_scan": 0,
+	"queries_total": 48,
+	"queries_failed_to_execute": 0,
+	"queries_failed_to_compute_similarity_id": 0,
+	"scan_id": "console",
+	"severity_counters": {
+		"HIGH": 1,
+		"INFO": 0,
+		"LOW": 1,
+		"MEDIUM": 2,
+		"TRACE": 0
+	},
+	"total_counter": 4,
+	"total_bom_resources": 0,
+	"start": "2022-11-03T18:38:14.175960022Z",
+	"end": "2022-11-03T18:38:15.594875108Z",
+	"paths": [
+		"/path"
+	],
+	"queries": [
+		{
+			"query_name": "Missing User Instruction",
+			"query_id": "fd54f200-402c-4333-a5a4-36ef6709af2f",
+			"query_url": "https://docs.docker.com/engine/reference/builder/#user",
+			"severity": "HIGH",
+			"platform": "Dockerfile",
+			"category": "Build Process",
+			"description": "A user should be specified in the dockerfile, otherwise the image will run as root",
+			"description_id": "eb49caf6",
+			"files": [
+				{
+					"file_name": "../../path/Dockerfile",
+					"similarity_id": "e7c0b4116f2f9104eba2bb0c999192c3dc731ba26dae47957792af17817ba8b9",
+					"line": 1,
+					"issue_type": "MissingAttribute",
+					"search_key": "FROM={{node:18-alpine3.15}}",
+					"search_line": 0,
+					"search_value": "",
+					"expected_value": "The 'Dockerfile' contains the 'USER' instruction",
+					"actual_value": "The 'Dockerfile' does not contain any 'USER' instruction"
+				}
+			]
+		},
+		{
+			"query_name": "Add Instead of Copy",
+			"query_id": "9513a694-aa0d-41d8-be61-3271e056f36b",
+			"query_url": "https://docs.docker.com/engine/reference/builder/#add",
+			"severity": "MEDIUM",
+			"platform": "Dockerfile",
+			"category": "Supply-Chain",
+			"description": "Using ADD to load external installation scripts could lead to an evil web server leveraging this and loading a malicious script.",
+			"description_id": "0aedd324",
+			"files": [
+				{
+					"file_name": "../../path/Dockerfile",
+					"similarity_id": "85abbff104f693a5a7786e0ad436ebcd11cf5cccc79666be92b02e65f0630a52",
+					"line": 8,
+					"issue_type": "IncorrectValue",
+					"search_key": "FROM={{node:18-alpine3.15}}.{{ADD ./entrypoint.sh /bin}}",
+					"search_line": 0,
+					"search_value": "",
+					"expected_value": "'COPY' ./entrypoint.sh",
+					"actual_value": "'ADD' ./entrypoint.sh"
+				},
+				{
+					"file_name": "../../path/Dockerfile",
+					"similarity_id": "015dc86bdc5bfcc554b0f70ad9d104b005956288e6d31a9e7651b2bba5befa54",
+					"line": 11,
+					"issue_type": "IncorrectValue",
+					"search_key": "FROM={{node:18-alpine3.15}}.{{ADD ./wizToHarness.js /home/wizToHarness.js}}",
+					"search_line": 0,
+					"search_value": "",
+					"expected_value": "'COPY' ./wizToHarness.js",
+					"actual_value": "'ADD' ./wizToHarness.js"
+				}
+			]
+		},
+		{
+			"query_name": "Healthcheck Instruction Missing",
+			"query_id": "b03a748a-542d-44f4-bb86-9199ab4fd2d5",
+			"query_url": "https://docs.docker.com/engine/reference/builder/#healthcheck",
+			"severity": "LOW",
+			"platform": "Dockerfile",
+			"category": "Insecure Configurations",
+			"description": "Ensure that HEALTHCHECK is being used. The HEALTHCHECK instruction tells Docker how to test a container to check that it is still working",
+			"description_id": "426121ee",
+			"files": [
+				{
+					"file_name": "../../path/Dockerfile",
+					"similarity_id": "f5261aaed14eae2ad2b7d0f75e09c7b08c24735e4795812cbe9aca55254bfa52",
+					"line": 1,
+					"issue_type": "MissingAttribute",
+					"search_key": "FROM={{node:18-alpine3.15}}",
+					"search_line": 0,
+					"search_value": "",
+					"expected_value": "Dockerfile contains instruction 'HEALTHCHECK'",
+					"actual_value": "Dockerfile doesn't contain instruction 'HEALTHCHECK'"
+				}
+			]
+		}
+	]
+}

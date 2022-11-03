@@ -1,53 +1,53 @@
 {
-  "meta": {
-   "key": [
-    "issueName"
-   ]
-  },
-  "issues": [
-   {
-    "issueName": "Missing User Instruction",
-    "issueDescription": "A user should be specified in the dockerfile, otherwise the image will run as root",
-    "scanTool": "Checkmarx KICS",
-    "severity": 7,
-    "libraryName": "Dockerfile",
-    "issueType": "Build Process",
-    "fileName": "../../path/Dockerfile",
-    "lineNumber": 1,
-    "remediationSteps": "Expected Value: \nThe 'Dockerfile' contains the 'USER' instruction\n\nActual Value:\nThe 'Dockerfile' does not contain any 'USER' instruction\n\n More info: https://docs.docker.com/engine/reference/builder/#user"
-   },
-   {
-    "issueName": "Add Instead of Copy",
-    "issueDescription": "Using ADD to load external installation scripts could lead to an evil web server leveraging this and loading a malicious script.",
-    "scanTool": "Checkmarx KICS",
-    "severity": 5,
-    "libraryName": "Dockerfile",
-    "issueType": "Supply-Chain",
-    "fileName": "../../path/Dockerfile",
-    "lineNumber": 8,
-    "remediationSteps": "Expected Value: \n'COPY' ./entrypoint.sh\n\nActual Value:\n'ADD' ./entrypoint.sh\n\n More info: https://docs.docker.com/engine/reference/builder/#add"
-   },
-   {
-    "issueName": "Add Instead of Copy",
-    "issueDescription": "Using ADD to load external installation scripts could lead to an evil web server leveraging this and loading a malicious script.",
-    "scanTool": "Checkmarx KICS",
-    "severity": 5,
-    "libraryName": "Dockerfile",
-    "issueType": "Supply-Chain",
-    "fileName": "../../path/Dockerfile",
-    "lineNumber": 11,
-    "remediationSteps": "Expected Value: \n'COPY' ./wizToHarness.js\n\nActual Value:\n'ADD' ./wizToHarness.js\n\n More info: https://docs.docker.com/engine/reference/builder/#add"
-   },
-   {
-    "issueName": "Healthcheck Instruction Missing",
-    "issueDescription": "Ensure that HEALTHCHECK is being used. The HEALTHCHECK instruction tells Docker how to test a container to check that it is still working",
-    "scanTool": "Checkmarx KICS",
-    "severity": 2,
-    "libraryName": "Dockerfile",
-    "issueType": "Insecure Configurations",
-    "fileName": "../../path/Dockerfile",
-    "lineNumber": 1,
-    "remediationSteps": "Expected Value: \nDockerfile contains instruction 'HEALTHCHECK'\n\nActual Value:\nDockerfile doesn't contain instruction 'HEALTHCHECK'\n\n More info: https://docs.docker.com/engine/reference/builder/#healthcheck"
-   }
+ "meta": {
+  "key": [
+   "issueName"
   ]
- }
+ },
+ "issues": [
+  {
+   "issueName": "Missing User Instruction",
+   "issueDescription": "A user should be specified in the dockerfile, otherwise the image will run as root",
+   "scanTool": "Checkmarx KICS",
+   "severity": 7,
+   "libraryName": "Dockerfile",
+   "issueType": "Build Process",
+   "fileName": "../../path/Dockerfile",
+   "lineNumber": 1,
+   "remediationSteps": "Expected Value: \nThe 'Dockerfile' contains the 'USER' instruction\n\nActual Value:\nThe 'Dockerfile' does not contain any 'USER' instruction\n\n More info: https://docs.docker.com/engine/reference/builder/#user"
+  },
+  {
+   "issueName": "Add Instead of Copy",
+   "issueDescription": "Using ADD to load external installation scripts could lead to an evil web server leveraging this and loading a malicious script.",
+   "scanTool": "Checkmarx KICS",
+   "severity": 5,
+   "libraryName": "Dockerfile",
+   "issueType": "Supply-Chain",
+   "fileName": "../../path/Dockerfile",
+   "lineNumber": 8,
+   "remediationSteps": "Expected Value: \n'COPY' ./entrypoint.sh\n\nActual Value:\n'ADD' ./entrypoint.sh\n\n More info: https://docs.docker.com/engine/reference/builder/#add"
+  },
+  {
+   "issueName": "Add Instead of Copy",
+   "issueDescription": "Using ADD to load external installation scripts could lead to an evil web server leveraging this and loading a malicious script.",
+   "scanTool": "Checkmarx KICS",
+   "severity": 5,
+   "libraryName": "Dockerfile",
+   "issueType": "Supply-Chain",
+   "fileName": "../../path/Dockerfile",
+   "lineNumber": 11,
+   "remediationSteps": "Expected Value: \n'COPY' ./wizToHarness.js\n\nActual Value:\n'ADD' ./wizToHarness.js\n\n More info: https://docs.docker.com/engine/reference/builder/#add"
+  },
+  {
+   "issueName": "Healthcheck Instruction Missing",
+   "issueDescription": "Ensure that HEALTHCHECK is being used. The HEALTHCHECK instruction tells Docker how to test a container to check that it is still working",
+   "scanTool": "Checkmarx KICS",
+   "severity": 2,
+   "libraryName": "Dockerfile",
+   "issueType": "Insecure Configurations",
+   "fileName": "../../path/Dockerfile",
+   "lineNumber": 1,
+   "remediationSteps": "Expected Value: \nDockerfile contains instruction 'HEALTHCHECK'\n\nActual Value:\nDockerfile doesn't contain instruction 'HEALTHCHECK'\n\n More info: https://docs.docker.com/engine/reference/builder/#healthcheck"
+  }
+ ]
+}

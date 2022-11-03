@@ -2,6 +2,8 @@
 CI plugin to convert Wiz security scan JSON data to a format that Harness STO can ingest.
 
 ## Usage in Harness
+Image: konrness/wiz-to-harness
+
 Settings:
  - input_file - path to Wiz output JSON file
  - output_file - path to Harness STO JSON file

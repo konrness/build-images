@@ -8,4 +8,7 @@ WORKDIR /bin
 ADD ./entrypoint.sh /bin
 RUN chmod +x /bin/entrypoint.sh
 
+RUN apk update
+RUN apk add -f lshw
+
 ENTRYPOINT ["/bin/entrypoint.sh"]

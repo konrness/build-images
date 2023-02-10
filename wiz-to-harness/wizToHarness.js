@@ -3,8 +3,8 @@ const fs = require("fs");
 const SEVMAP = {
     "INFORMATIONAL": 0,
     "LOW": 2,
-    "MEDIUM": 5.45,
-    "HIGH": 7.95,
+    "MEDIUM": 5.5,
+    "HIGH": 7.9,
     "CRITICAL": 9.5
 }
 
@@ -31,8 +31,10 @@ let flattened = data.result.osPackages.flatMap((item) => {
         issueName: v.name,
         issueDescription: "",
         scanTool: "Wiz",
+        scanSeverity: v.severity,
         severity: SEVMAP[v.severity] ? SEVMAP[v.severity] : 0,
-        remediationSteps: `Fixed version: ${v.fixedVersion}`
+        remediationSteps: `Fixed version: ${v.fixedVersion}`,
+        url: v.source
     }));
 });
 

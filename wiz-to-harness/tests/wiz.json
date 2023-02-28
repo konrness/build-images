@@ -2,7 +2,1478 @@ here's a bunch of text
 
 more text
 
-{"id":"d1da0b43-c40d-4090-9558-e94a0cecc4cf","createdAt":"2022-09-26T19:10:09.640434864Z","createdBy":{"serviceAccount":{"id":"CLMhe0sI0QfKbKFOeXv3a1NY3u3pi0M5"},"user":null},"status":{"state":"SUCCESS","verdict":"PASSED_BY_POLICY","details":null},"policies":[{"id":"164971ff-b937-4378-bab9-b70893befaf3","name":"Default vulnerabilities policy","description":"Default built-in policy","builtin":true,"params":{"__typename":"CICDScanPolicyParamsVulnerabilities","severity":"CRITICAL","packageCountThreshold":1,"ignoreUnfixed":true,"packageAllowList":[]}}],"outdatedPolicies":[],"scanOriginResource":{"__typename":"CICDScanOriginContainerImage","name":"ubuntu:xenial"},"result":{"__typename":"CICDDiskScanResult","osPackages":[{"name":"libblkid1","version":"2.27.1-6ubuntu3.10","vulnerabilities":[{"name":"CVE-2016-5011","severity":"LOW","fixedVersion":"2.27.1-6ubuntu3.10+esm2","source":"https://ubuntu.com/security/CVE-2016-5011"}],"failedPolicyMatches":[]},{"name":"e2fslibs","version":"1.42.13-1ubuntu1.2","vulnerabilities":[{"name":"CVE-2022-1304","severity":"MEDIUM","fixedVersion":"1.42.13-1ubuntu1.2+esm1","source":"https://ubuntu.com/security/CVE-2022-1304"}],"failedPolicyMatches":[]},{"name":"libtinfo5","version":"6.0+20160213-1ubuntu1","vulnerabilities":[{"name":"CVE-2021-39537","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm2","source":"https://ubuntu.com/security/CVE-2021-39537"},{"name":"CVE-2017-10685","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm1","source":"https://people.canonical.com/~ubuntu-security/cve/CVE-2017-10685.html"},{"name":"CVE-2017-11112","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm1","source":"https://ubuntu.com/security/CVE-2017-11112"},{"name":"CVE-2017-13730","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm1","source":"https://ubuntu.com/security/CVE-2017-13730"},{"name":"CVE-2017-13732","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm1","source":"https://ubuntu.com/security/CVE-2017-13732"},{"name":"CVE-2017-13733","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm1","source":"https://ubuntu.com/security/CVE-2017-13733"},{"name":"CVE-2018-19217","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm1","source":"https://people.canonical.com/~ubuntu-security/cve/CVE-2018-19217.html"},{"name":"CVE-2017-13728","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm1","source":"https://ubuntu.com/security/CVE-2017-13728"},{"name":"CVE-2019-17594","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm2","source":"https://people.canonical.com/~ubuntu-security/cve/CVE-2019-17594.html"},{"name":"CVE-2017-10684","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm1","source":"https://ubuntu.com/security/CVE-2017-10684"},{"name":"CVE-2017-13729","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm1","source":"https://ubuntu.com/security/CVE-2017-13729"},{"name":"CVE-2017-13731","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm1","source":"https://ubuntu.com/security/CVE-2017-13731"},{"name":"CVE-2022-29458","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm2","source":"https://ubuntu.com/security/CVE-2022-29458"},{"name":"CVE-2017-11113","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm1","source":"https://ubuntu.com/security/CVE-2017-11113"},{"name":"CVE-2017-13734","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm1","source":"https://ubuntu.com/security/CVE-2017-13734"},{"name":"CVE-2017-16879","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm2","source":"https://ubuntu.com/security/CVE-2017-16879"},{"name":"CVE-2018-19211","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm2","source":"https://ubuntu.com/security/CVE-2018-19211"},{"name":"CVE-2019-17595","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm2","source":"https://ubuntu.com/security/CVE-2019-17595"}],"failedPolicyMatches":[]},{"name":"libsystemd0","version":"229-4ubuntu21.31","vulnerabilities":[{"name":"CVE-2021-33910","severity":"HIGH","fixedVersion":"229-4ubuntu21.31+esm1","source":"https://ubuntu.com/security/CVE-2021-33910"},{"name":"CVE-2020-13529","severity":"LOW","fixedVersion":"229-4ubuntu21.31+esm1","source":"https://people.canonical.com/~ubuntu-security/cve/CVE-2020-13529.html"}],"failedPolicyMatches":[]},{"name":"perl-base","version":"5.22.1-9ubuntu0.9","vulnerabilities":[{"name":"CVE-2020-16156","severity":"MEDIUM","fixedVersion":null,"source":"https://ubuntu.com/security/CVE-2020-16156"}],"failedPolicyMatches":[]},{"name":"libuuid1","version":"2.27.1-6ubuntu3.10","vulnerabilities":[{"name":"CVE-2016-5011","severity":"LOW","fixedVersion":"2.27.1-6ubuntu3.10+esm2","source":"https://ubuntu.com/security/CVE-2016-5011"}],"failedPolicyMatches":[]},{"name":"libss2","version":"1.42.13-1ubuntu1.2","vulnerabilities":[{"name":"CVE-2022-1304","severity":"MEDIUM","fixedVersion":"1.42.13-1ubuntu1.2+esm1","source":"https://ubuntu.com/security/CVE-2022-1304"}],"failedPolicyMatches":[]},{"name":"libc6","version":"2.23-0ubuntu11.3","vulnerabilities":[{"name":"CVE-2021-3326","severity":"LOW","fixedVersion":null,"source":"https://ubuntu.com/security/CVE-2021-3326"},{"name":"CVE-2016-20013","severity":"LOW","fixedVersion":null,"source":"https://ubuntu.com/security/CVE-2016-20013"},{"name":"CVE-2016-10228","severity":"LOW","fixedVersion":null,"source":"https://ubuntu.com/security/CVE-2016-10228"},{"name":"CVE-2019-25013","severity":"LOW","fixedVersion":null,"source":"https://ubuntu.com/security/CVE-2019-25013"},{"name":"CVE-2022-23218","severity":"LOW","fixedVersion":"2.23-0ubuntu11.3+esm1","source":"https://people.canonical.com/~ubuntu-security/cve/CVE-2022-23218.html"},{"name":"CVE-2022-23219","severity":"LOW","fixedVersion":"2.23-0ubuntu11.3+esm1","source":"https://ubuntu.com/security/CVE-2022-23219"},{"name":"CVE-2017-12132","severity":"LOW","fixedVersion":null,"source":"https://people.canonical.com/~ubuntu-security/cve/CVE-2017-12132.html"},{"name":"CVE-2021-35942","severity":"LOW","fixedVersion":null,"source":"https://ubuntu.com/security/CVE-2021-35942"},{"name":"CVE-2020-27618","severity":"LOW","fixedVersion":null,"source":"https://ubuntu.com/security/CVE-2020-27618"},{"name":"CVE-2021-3999","severity":"MEDIUM","fixedVersion":"2.23-0ubuntu11.3+esm1","source":"https://ubuntu.com/security/CVE-2021-3999"}],"failedPolicyMatches":[]},{"name":"gnupg","version":"1.4.20-1ubuntu3.3","vulnerabilities":[{"name":"CVE-2019-14855","severity":"LOW","fixedVersion":null,"source":"https://people.canonical.com/~ubuntu-security/cve/CVE-2019-14855.html"},{"name":"CVE-2022-34903","severity":"MEDIUM","fixedVersion":"1.4.20-1ubuntu3.3+esm2","source":"https://ubuntu.com/security/CVE-2022-34903"},{"name":"CVE-2019-13050","severity":"LOW","fixedVersion":null,"source":"https://ubuntu.com/security/CVE-2019-13050"}],"failedPolicyMatches":[]},{"name":"gpgv","version":"1.4.20-1ubuntu3.3","vulnerabilities":[{"name":"CVE-2019-13050","severity":"LOW","fixedVersion":null,"source":"https://ubuntu.com/security/CVE-2019-13050"},{"name":"CVE-2019-14855","severity":"LOW","fixedVersion":null,"source":"https://people.canonical.com/~ubuntu-security/cve/CVE-2019-14855.html"},{"name":"CVE-2022-34903","severity":"MEDIUM","fixedVersion":"1.4.20-1ubuntu3.3+esm2","source":"https://ubuntu.com/security/CVE-2022-34903"}],"failedPolicyMatches":[]},{"name":"passwd","version":"1:4.2-3.1ubuntu5.4","vulnerabilities":[{"name":"CVE-2017-12424","severity":"LOW","fixedVersion":"1:4.2-3.1ubuntu5.5+esm1","source":"https://ubuntu.com/security/CVE-2017-12424"},{"name":"CVE-2018-7169","severity":"LOW","fixedVersion":"1:4.2-3.1ubuntu5.5+esm1","source":"https://ubuntu.com/security/CVE-2018-7169"},{"name":"CVE-2013-4235","severity":"LOW","fixedVersion":null,"source":"https://ubuntu.com/security/CVE-2013-4235"}],"failedPolicyMatches":[]},{"name":"ncurses-base","version":"6.0+20160213-1ubuntu1","vulnerabilities":[{"name":"CVE-2017-13729","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm1","source":"https://ubuntu.com/security/CVE-2017-13729"},{"name":"CVE-2017-13733","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm1","source":"https://ubuntu.com/security/CVE-2017-13733"},{"name":"CVE-2018-19211","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm2","source":"https://ubuntu.com/security/CVE-2018-19211"},{"name":"CVE-2021-39537","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm2","source":"https://ubuntu.com/security/CVE-2021-39537"},{"name":"CVE-2019-17595","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm2","source":"https://ubuntu.com/security/CVE-2019-17595"},{"name":"CVE-2022-29458","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm2","source":"https://ubuntu.com/security/CVE-2022-29458"},{"name":"CVE-2017-13730","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm1","source":"https://ubuntu.com/security/CVE-2017-13730"},{"name":"CVE-2017-13731","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm1","source":"https://ubuntu.com/security/CVE-2017-13731"},{"name":"CVE-2017-13732","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm1","source":"https://ubuntu.com/security/CVE-2017-13732"},{"name":"CVE-2019-17594","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm2","source":"https://people.canonical.com/~ubuntu-security/cve/CVE-2019-17594.html"},{"name":"CVE-2017-10685","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm1","source":"https://people.canonical.com/~ubuntu-security/cve/CVE-2017-10685.html"},{"name":"CVE-2017-11112","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm1","source":"https://ubuntu.com/security/CVE-2017-11112"},{"name":"CVE-2017-11113","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm1","source":"https://ubuntu.com/security/CVE-2017-11113"},{"name":"CVE-2017-13728","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm1","source":"https://ubuntu.com/security/CVE-2017-13728"},{"name":"CVE-2017-10684","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm1","source":"https://ubuntu.com/security/CVE-2017-10684"},{"name":"CVE-2017-13734","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm1","source":"https://ubuntu.com/security/CVE-2017-13734"},{"name":"CVE-2017-16879","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm2","source":"https://ubuntu.com/security/CVE-2017-16879"},{"name":"CVE-2018-19217","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm1","source":"https://people.canonical.com/~ubuntu-security/cve/CVE-2018-19217.html"}],"failedPolicyMatches":[]},{"name":"libsepol1","version":"2.4-2","vulnerabilities":[{"name":"CVE-2021-36084","severity":"LOW","fixedVersion":"2.4-2ubuntu0.1~esm1","source":"https://ubuntu.com/security/CVE-2021-36084"},{"name":"CVE-2021-36085","severity":"LOW","fixedVersion":"2.4-2ubuntu0.1~esm1","source":"https://ubuntu.com/security/CVE-2021-36085"},{"name":"CVE-2021-36087","severity":"LOW","fixedVersion":"2.4-2ubuntu0.1~esm1","source":"https://ubuntu.com/security/CVE-2021-36087"}],"failedPolicyMatches":[]},{"name":"tar","version":"1.28-2.1ubuntu0.2","vulnerabilities":[{"name":"CVE-2021-20193","severity":"LOW","fixedVersion":"1.28-2.1ubuntu0.2+esm1","source":"https://ubuntu.com/security/CVE-2021-20193"}],"failedPolicyMatches":[]},{"name":"libsmartcols1","version":"2.27.1-6ubuntu3.10","vulnerabilities":[{"name":"CVE-2016-5011","severity":"LOW","fixedVersion":"2.27.1-6ubuntu3.10+esm2","source":"https://ubuntu.com/security/CVE-2016-5011"}],"failedPolicyMatches":[]},{"name":"bash","version":"4.3-14ubuntu1.4","vulnerabilities":[{"name":"CVE-2019-18276","severity":"LOW","fixedVersion":"4.3-14ubuntu1.4+esm1","source":"https://ubuntu.com/security/CVE-2019-18276"}],"failedPolicyMatches":[]},{"name":"multiarch-support","version":"2.23-0ubuntu11.3","vulnerabilities":[{"name":"CVE-2021-3999","severity":"MEDIUM","fixedVersion":"2.23-0ubuntu11.3+esm1","source":"https://ubuntu.com/security/CVE-2021-3999"},{"name":"CVE-2016-20013","severity":"LOW","fixedVersion":null,"source":"https://ubuntu.com/security/CVE-2016-20013"},{"name":"CVE-2022-23219","severity":"LOW","fixedVersion":"2.23-0ubuntu11.3+esm1","source":"https://ubuntu.com/security/CVE-2022-23219"},{"name":"CVE-2021-3326","severity":"LOW","fixedVersion":null,"source":"https://ubuntu.com/security/CVE-2021-3326"},{"name":"CVE-2017-12132","severity":"LOW","fixedVersion":null,"source":"https://people.canonical.com/~ubuntu-security/cve/CVE-2017-12132.html"},{"name":"CVE-2022-23218","severity":"LOW","fixedVersion":"2.23-0ubuntu11.3+esm1","source":"https://people.canonical.com/~ubuntu-security/cve/CVE-2022-23218.html"},{"name":"CVE-2019-25013","severity":"LOW","fixedVersion":null,"source":"https://ubuntu.com/security/CVE-2019-25013"},{"name":"CVE-2020-27618","severity":"LOW","fixedVersion":null,"source":"https://ubuntu.com/security/CVE-2020-27618"},{"name":"CVE-2016-10228","severity":"LOW","fixedVersion":null,"source":"https://ubuntu.com/security/CVE-2016-10228"},{"name":"CVE-2021-35942","severity":"LOW","fixedVersion":null,"source":"https://ubuntu.com/security/CVE-2021-35942"}],"failedPolicyMatches":[]},{"name":"dpkg","version":"1.18.4ubuntu1.7","vulnerabilities":[{"name":"CVE-2022-1664","severity":"MEDIUM","fixedVersion":"1.18.4ubuntu1.7+esm1","source":"https://people.canonical.com/~ubuntu-security/cve/CVE-2022-1664.html"}],"failedPolicyMatches":[]},{"name":"libfdisk1","version":"2.27.1-6ubuntu3.10","vulnerabilities":[{"name":"CVE-2016-5011","severity":"LOW","fixedVersion":"2.27.1-6ubuntu3.10+esm2","source":"https://ubuntu.com/security/CVE-2016-5011"}],"failedPolicyMatches":[]},{"name":"util-linux","version":"2.27.1-6ubuntu3.10","vulnerabilities":[{"name":"CVE-2016-5011","severity":"LOW","fixedVersion":"2.27.1-6ubuntu3.10+esm2","source":"https://ubuntu.com/security/CVE-2016-5011"}],"failedPolicyMatches":[]},{"name":"coreutils","version":"8.25-2ubuntu3~16.04","vulnerabilities":[{"name":"CVE-2016-2781","severity":"LOW","fixedVersion":null,"source":"https://people.canonical.com/~ubuntu-security/cve/CVE-2016-2781.html"}],"failedPolicyMatches":[]},{"name":"mount","version":"2.27.1-6ubuntu3.10","vulnerabilities":[{"name":"CVE-2016-5011","severity":"LOW","fixedVersion":"2.27.1-6ubuntu3.10+esm2","source":"https://ubuntu.com/security/CVE-2016-5011"}],"failedPolicyMatches":[]},{"name":"zlib1g","version":"1:1.2.8.dfsg-2ubuntu4.3","vulnerabilities":[{"name":"CVE-2018-25032","severity":"MEDIUM","fixedVersion":"1:1.2.8.dfsg-2ubuntu4.3+esm1","source":"https://ubuntu.com/security/CVE-2018-25032"},{"name":"CVE-2022-37434","severity":"MEDIUM","fixedVersion":"1:1.2.8.dfsg-2ubuntu4.3+esm2","source":"https://ubuntu.com/security/CVE-2022-37434"}],"failedPolicyMatches":[]},{"name":"libapparmor1","version":"2.10.95-0ubuntu2.11","vulnerabilities":[{"name":"CVE-2016-1585","severity":"MEDIUM","fixedVersion":null,"source":"https://people.canonical.com/~ubuntu-security/cve/CVE-2016-1585.html"}],"failedPolicyMatches":[]},{"name":"libc-bin","version":"2.23-0ubuntu11.3","vulnerabilities":[{"name":"CVE-2021-35942","severity":"LOW","fixedVersion":null,"source":"https://ubuntu.com/security/CVE-2021-35942"},{"name":"CVE-2022-23218","severity":"LOW","fixedVersion":"2.23-0ubuntu11.3+esm1","source":"https://people.canonical.com/~ubuntu-security/cve/CVE-2022-23218.html"},{"name":"CVE-2016-10228","severity":"LOW","fixedVersion":null,"source":"https://ubuntu.com/security/CVE-2016-10228"},{"name":"CVE-2017-12132","severity":"LOW","fixedVersion":null,"source":"https://people.canonical.com/~ubuntu-security/cve/CVE-2017-12132.html"},{"name":"CVE-2021-3326","severity":"LOW","fixedVersion":null,"source":"https://ubuntu.com/security/CVE-2021-3326"},{"name":"CVE-2019-25013","severity":"LOW","fixedVersion":null,"source":"https://ubuntu.com/security/CVE-2019-25013"},{"name":"CVE-2021-3999","severity":"MEDIUM","fixedVersion":"2.23-0ubuntu11.3+esm1","source":"https://ubuntu.com/security/CVE-2021-3999"},{"name":"CVE-2022-23219","severity":"LOW","fixedVersion":"2.23-0ubuntu11.3+esm1","source":"https://ubuntu.com/security/CVE-2022-23219"},{"name":"CVE-2020-27618","severity":"LOW","fixedVersion":null,"source":"https://ubuntu.com/security/CVE-2020-27618"},{"name":"CVE-2016-20013","severity":"LOW","fixedVersion":null,"source":"https://ubuntu.com/security/CVE-2016-20013"}],"failedPolicyMatches":[]},{"name":"libgcrypt20","version":"1.6.5-2ubuntu0.6","vulnerabilities":[{"name":"CVE-2021-33560","severity":"LOW","fixedVersion":"1.6.5-2ubuntu0.6+esm1","source":"https://ubuntu.com/security/CVE-2021-33560"},{"name":"CVE-2021-40528","severity":"MEDIUM","fixedVersion":"1.6.5-2ubuntu0.6+esm1","source":"https://ubuntu.com/security/CVE-2021-40528"}],"failedPolicyMatches":[]},{"name":"ncurses-bin","version":"6.0+20160213-1ubuntu1","vulnerabilities":[{"name":"CVE-2017-11112","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm1","source":"https://ubuntu.com/security/CVE-2017-11112"},{"name":"CVE-2017-13730","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm1","source":"https://ubuntu.com/security/CVE-2017-13730"},{"name":"CVE-2018-19217","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm1","source":"https://people.canonical.com/~ubuntu-security/cve/CVE-2018-19217.html"},{"name":"CVE-2018-19211","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm2","source":"https://ubuntu.com/security/CVE-2018-19211"},{"name":"CVE-2017-10684","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm1","source":"https://ubuntu.com/security/CVE-2017-10684"},{"name":"CVE-2017-13729","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm1","source":"https://ubuntu.com/security/CVE-2017-13729"},{"name":"CVE-2017-13734","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm1","source":"https://ubuntu.com/security/CVE-2017-13734"},{"name":"CVE-2017-16879","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm2","source":"https://ubuntu.com/security/CVE-2017-16879"},{"name":"CVE-2019-17594","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm2","source":"https://people.canonical.com/~ubuntu-security/cve/CVE-2019-17594.html"},{"name":"CVE-2022-29458","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm2","source":"https://ubuntu.com/security/CVE-2022-29458"},{"name":"CVE-2017-10685","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm1","source":"https://people.canonical.com/~ubuntu-security/cve/CVE-2017-10685.html"},{"name":"CVE-2017-11113","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm1","source":"https://ubuntu.com/security/CVE-2017-11113"},{"name":"CVE-2017-13728","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm1","source":"https://ubuntu.com/security/CVE-2017-13728"},{"name":"CVE-2019-17595","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm2","source":"https://ubuntu.com/security/CVE-2019-17595"},{"name":"CVE-2021-39537","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm2","source":"https://ubuntu.com/security/CVE-2021-39537"},{"name":"CVE-2017-13731","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm1","source":"https://ubuntu.com/security/CVE-2017-13731"},{"name":"CVE-2017-13732","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm1","source":"https://ubuntu.com/security/CVE-2017-13732"},{"name":"CVE-2017-13733","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm1","source":"https://ubuntu.com/security/CVE-2017-13733"}],"failedPolicyMatches":[]},{"name":"liblz4-1","version":"0.0~r131-2ubuntu2","vulnerabilities":[{"name":"CVE-2021-3520","severity":"MEDIUM","fixedVersion":"0.0~r131-2ubuntu2+esm1","source":"https://ubuntu.com/security/CVE-2021-3520"}],"failedPolicyMatches":[]},{"name":"e2fsprogs","version":"1.42.13-1ubuntu1.2","vulnerabilities":[{"name":"CVE-2022-1304","severity":"MEDIUM","fixedVersion":"1.42.13-1ubuntu1.2+esm1","source":"https://ubuntu.com/security/CVE-2022-1304"}],"failedPolicyMatches":[]},{"name":"libudev1","version":"229-4ubuntu21.31","vulnerabilities":[{"name":"CVE-2020-13529","severity":"LOW","fixedVersion":"229-4ubuntu21.31+esm1","source":"https://people.canonical.com/~ubuntu-security/cve/CVE-2020-13529.html"},{"name":"CVE-2021-33910","severity":"HIGH","fixedVersion":"229-4ubuntu21.31+esm1","source":"https://ubuntu.com/security/CVE-2021-33910"}],"failedPolicyMatches":[]},{"name":"systemd-sysv","version":"229-4ubuntu21.31","vulnerabilities":[{"name":"CVE-2021-33910","severity":"HIGH","fixedVersion":"229-4ubuntu21.31+esm1","source":"https://ubuntu.com/security/CVE-2021-33910"},{"name":"CVE-2020-13529","severity":"LOW","fixedVersion":"229-4ubuntu21.31+esm1","source":"https://people.canonical.com/~ubuntu-security/cve/CVE-2020-13529.html"}],"failedPolicyMatches":[]},{"name":"libncurses5","version":"6.0+20160213-1ubuntu1","vulnerabilities":[{"name":"CVE-2018-19217","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm1","source":"https://people.canonical.com/~ubuntu-security/cve/CVE-2018-19217.html"},{"name":"CVE-2019-17595","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm2","source":"https://ubuntu.com/security/CVE-2019-17595"},{"name":"CVE-2022-29458","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm2","source":"https://ubuntu.com/security/CVE-2022-29458"},{"name":"CVE-2017-13730","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm1","source":"https://ubuntu.com/security/CVE-2017-13730"},{"name":"CVE-2017-13729","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm1","source":"https://ubuntu.com/security/CVE-2017-13729"},{"name":"CVE-2017-16879","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm2","source":"https://ubuntu.com/security/CVE-2017-16879"},{"name":"CVE-2018-19211","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm2","source":"https://ubuntu.com/security/CVE-2018-19211"},{"name":"CVE-2019-17594","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm2","source":"https://people.canonical.com/~ubuntu-security/cve/CVE-2019-17594.html"},{"name":"CVE-2017-11112","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm1","source":"https://ubuntu.com/security/CVE-2017-11112"},{"name":"CVE-2017-13728","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm1","source":"https://ubuntu.com/security/CVE-2017-13728"},{"name":"CVE-2017-13731","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm1","source":"https://ubuntu.com/security/CVE-2017-13731"},{"name":"CVE-2017-13734","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm1","source":"https://ubuntu.com/security/CVE-2017-13734"},{"name":"CVE-2017-10685","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm1","source":"https://people.canonical.com/~ubuntu-security/cve/CVE-2017-10685.html"},{"name":"CVE-2017-11113","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm1","source":"https://ubuntu.com/security/CVE-2017-11113"},{"name":"CVE-2017-13732","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm1","source":"https://ubuntu.com/security/CVE-2017-13732"},{"name":"CVE-2017-13733","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm1","source":"https://ubuntu.com/security/CVE-2017-13733"},{"name":"CVE-2021-39537","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm2","source":"https://ubuntu.com/security/CVE-2021-39537"},{"name":"CVE-2017-10684","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm1","source":"https://ubuntu.com/security/CVE-2017-10684"}],"failedPolicyMatches":[]},{"name":"login","version":"1:4.2-3.1ubuntu5.4","vulnerabilities":[{"name":"CVE-2018-7169","severity":"LOW","fixedVersion":"1:4.2-3.1ubuntu5.5+esm1","source":"https://ubuntu.com/security/CVE-2018-7169"},{"name":"CVE-2013-4235","severity":"LOW","fixedVersion":null,"source":"https://ubuntu.com/security/CVE-2013-4235"},{"name":"CVE-2017-12424","severity":"LOW","fixedVersion":"1:4.2-3.1ubuntu5.5+esm1","source":"https://ubuntu.com/security/CVE-2017-12424"}],"failedPolicyMatches":[]},{"name":"libmount1","version":"2.27.1-6ubuntu3.10","vulnerabilities":[{"name":"CVE-2016-5011","severity":"LOW","fixedVersion":"2.27.1-6ubuntu3.10+esm2","source":"https://ubuntu.com/security/CVE-2016-5011"}],"failedPolicyMatches":[]},{"name":"gzip","version":"1.6-4ubuntu1","vulnerabilities":[{"name":"CVE-2022-1271","severity":"MEDIUM","fixedVersion":"1.6-4ubuntu1+esm1","source":"https://ubuntu.com/security/CVE-2022-1271"}],"failedPolicyMatches":[]},{"name":"systemd","version":"229-4ubuntu21.31","vulnerabilities":[{"name":"CVE-2020-13529","severity":"LOW","fixedVersion":"229-4ubuntu21.31+esm1","source":"https://people.canonical.com/~ubuntu-security/cve/CVE-2020-13529.html"},{"name":"CVE-2021-33910","severity":"HIGH","fixedVersion":"229-4ubuntu21.31+esm1","source":"https://ubuntu.com/security/CVE-2021-33910"}],"failedPolicyMatches":[]},{"name":"libcomerr2","version":"1.42.13-1ubuntu1.2","vulnerabilities":[{"name":"CVE-2022-1304","severity":"MEDIUM","fixedVersion":"1.42.13-1ubuntu1.2+esm1","source":"https://ubuntu.com/security/CVE-2022-1304"}],"failedPolicyMatches":[]},{"name":"libncursesw5","version":"6.0+20160213-1ubuntu1","vulnerabilities":[{"name":"CVE-2017-10684","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm1","source":"https://ubuntu.com/security/CVE-2017-10684"},{"name":"CVE-2017-10685","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm1","source":"https://people.canonical.com/~ubuntu-security/cve/CVE-2017-10685.html"},{"name":"CVE-2017-13734","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm1","source":"https://ubuntu.com/security/CVE-2017-13734"},{"name":"CVE-2018-19217","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm1","source":"https://people.canonical.com/~ubuntu-security/cve/CVE-2018-19217.html"},{"name":"CVE-2019-17595","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm2","source":"https://ubuntu.com/security/CVE-2019-17595"},{"name":"CVE-2017-13728","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm1","source":"https://ubuntu.com/security/CVE-2017-13728"},{"name":"CVE-2017-13732","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm1","source":"https://ubuntu.com/security/CVE-2017-13732"},{"name":"CVE-2017-13731","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm1","source":"https://ubuntu.com/security/CVE-2017-13731"},{"name":"CVE-2017-16879","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm2","source":"https://ubuntu.com/security/CVE-2017-16879"},{"name":"CVE-2018-19211","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm2","source":"https://ubuntu.com/security/CVE-2018-19211"},{"name":"CVE-2021-39537","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm2","source":"https://ubuntu.com/security/CVE-2021-39537"},{"name":"CVE-2022-29458","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm2","source":"https://ubuntu.com/security/CVE-2022-29458"},{"name":"CVE-2017-11112","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm1","source":"https://ubuntu.com/security/CVE-2017-11112"},{"name":"CVE-2017-11113","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm1","source":"https://ubuntu.com/security/CVE-2017-11113"},{"name":"CVE-2017-13729","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm1","source":"https://ubuntu.com/security/CVE-2017-13729"},{"name":"CVE-2017-13730","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm1","source":"https://ubuntu.com/security/CVE-2017-13730"},{"name":"CVE-2017-13733","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm1","source":"https://ubuntu.com/security/CVE-2017-13733"},{"name":"CVE-2019-17594","severity":"LOW","fixedVersion":"6.0+20160213-1ubuntu1+esm2","source":"https://people.canonical.com/~ubuntu-security/cve/CVE-2019-17594.html"}],"failedPolicyMatches":[]},{"name":"liblzma5","version":"5.1.1alpha+20120614-2ubuntu2","vulnerabilities":[{"name":"CVE-2022-1271","severity":"MEDIUM","fixedVersion":"5.1.1alpha+20120614-2ubuntu2.16.04.1+esm1","source":"https://ubuntu.com/security/CVE-2022-1271"}],"failedPolicyMatches":[]},{"name":"libzstd1","version":"1.3.1+dfsg-1~ubuntu0.16.04.1","vulnerabilities":[{"name":"CVE-2019-11922","severity":"MEDIUM","fixedVersion":"1.3.1+dfsg-1~ubuntu0.16.04.1+esm2","source":"https://ubuntu.com/security/CVE-2019-11922"}],"failedPolicyMatches":[]},{"name":"bsdutils","version":"1:2.27.1-6ubuntu3.10","vulnerabilities":[{"name":"CVE-2016-5011","severity":"LOW","fixedVersion":"2.27.1-6ubuntu3.10+esm2","source":"https://ubuntu.com/security/CVE-2016-5011"}],"failedPolicyMatches":[]},{"name":"libpcre3","version":"2:8.38-3.1","vulnerabilities":[{"name":"CVE-2017-7186","severity":"LOW","fixedVersion":null,"source":"https://ubuntu.com/security/CVE-2017-7186"},{"name":"CVE-2017-7244","severity":"LOW","fixedVersion":null,"source":"https://ubuntu.com/security/CVE-2017-7244"},{"name":"CVE-2020-14155","severity":"LOW","fixedVersion":"2:8.38-3.1ubuntu0.1~esm1","source":"https://ubuntu.com/security/CVE-2020-14155"},{"name":"CVE-2017-11164","severity":"LOW","fixedVersion":null,"source":"https://people.canonical.com/~ubuntu-security/cve/CVE-2017-11164.html"},{"name":"CVE-2017-6004","severity":"LOW","fixedVersion":null,"source":"https://ubuntu.com/security/CVE-2017-6004"}],"failedPolicyMatches":[]}],"libraries":[],"secrets":null,"failedPolicyMatches":[],"analytics":{"vulnerabilities":{"criticalCount":0,"highCount":4,"mediumCount":19,"lowCount":151,"infoCount":0},"secrets":{"cloudKeyCount":0,"gitCredentialCount":0,"dbConnectionStringCount":0,"privateKeyCount":0,"passwordCount":0}}}}
+{"id": "d1da0b43-c40d-4090-9558-e94a0cecc4cf",
+  "createdAt": "2022-09-26T19:10:09.640434864Z",
+  "createdBy": {
+    "serviceAccount": {
+      "id": "CLMhe0sI0QfKbKFOeXv3a1NY3u3pi0M5"
+    },
+    "user": null
+  },
+  "status": {
+    "state": "SUCCESS",
+    "verdict": "PASSED_BY_POLICY",
+    "details": null
+  },
+  "policies": [
+    {
+      "id": "164971ff-b937-4378-bab9-b70893befaf3",
+      "name": "Default vulnerabilities policy",
+      "description": "Default built-in policy",
+      "builtin": true,
+      "params": {
+        "__typename": "CICDScanPolicyParamsVulnerabilities",
+        "severity": "CRITICAL",
+        "packageCountThreshold": 1,
+        "ignoreUnfixed": true,
+        "packageAllowList": []
+      }
+    }
+  ],
+  "outdatedPolicies": [],
+  "scanOriginResource": {
+    "__typename": "CICDScanOriginContainerImage",
+    "name": "ubuntu:xenial"
+  },
+  "result": {
+    "__typename": "CICDDiskScanResult",
+    "osPackages": [
+      {
+        "name": "libblkid1",
+        "version": "2.27.1-6ubuntu3.10",
+        "vulnerabilities": [
+          {
+            "name": "CVE-2016-5011",
+            "severity": "LOW",
+            "fixedVersion": "2.27.1-6ubuntu3.10+esm2",
+            "source": "https://ubuntu.com/security/CVE-2016-5011"
+          }
+        ],
+        "failedPolicyMatches": []
+      },
+      {
+        "name": "e2fslibs",
+        "version": "1.42.13-1ubuntu1.2",
+        "vulnerabilities": [
+          {
+            "name": "CVE-2022-1304",
+            "severity": "MEDIUM",
+            "fixedVersion": "1.42.13-1ubuntu1.2+esm1",
+            "source": "https://ubuntu.com/security/CVE-2022-1304"
+          }
+        ],
+        "failedPolicyMatches": []
+      },
+      {
+        "name": "libtinfo5",
+        "version": "6.0+20160213-1ubuntu1",
+        "vulnerabilities": [
+          {
+            "name": "CVE-2021-39537",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm2",
+            "source": "https://ubuntu.com/security/CVE-2021-39537"
+          },
+          {
+            "name": "CVE-2017-10685",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm1",
+            "source": "https://people.canonical.com/~ubuntu-security/cve/CVE-2017-10685.html"
+          },
+          {
+            "name": "CVE-2017-11112",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm1",
+            "source": "https://ubuntu.com/security/CVE-2017-11112"
+          },
+          {
+            "name": "CVE-2017-13730",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm1",
+            "source": "https://ubuntu.com/security/CVE-2017-13730"
+          },
+          {
+            "name": "CVE-2017-13732",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm1",
+            "source": "https://ubuntu.com/security/CVE-2017-13732"
+          },
+          {
+            "name": "CVE-2017-13733",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm1",
+            "source": "https://ubuntu.com/security/CVE-2017-13733"
+          },
+          {
+            "name": "CVE-2018-19217",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm1",
+            "source": "https://people.canonical.com/~ubuntu-security/cve/CVE-2018-19217.html"
+          },
+          {
+            "name": "CVE-2017-13728",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm1",
+            "source": "https://ubuntu.com/security/CVE-2017-13728"
+          },
+          {
+            "name": "CVE-2019-17594",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm2",
+            "source": "https://people.canonical.com/~ubuntu-security/cve/CVE-2019-17594.html"
+          },
+          {
+            "name": "CVE-2017-10684",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm1",
+            "source": "https://ubuntu.com/security/CVE-2017-10684"
+          },
+          {
+            "name": "CVE-2017-13729",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm1",
+            "source": "https://ubuntu.com/security/CVE-2017-13729"
+          },
+          {
+            "name": "CVE-2017-13731",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm1",
+            "source": "https://ubuntu.com/security/CVE-2017-13731"
+          },
+          {
+            "name": "CVE-2022-29458",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm2",
+            "source": "https://ubuntu.com/security/CVE-2022-29458"
+          },
+          {
+            "name": "CVE-2017-11113",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm1",
+            "source": "https://ubuntu.com/security/CVE-2017-11113"
+          },
+          {
+            "name": "CVE-2017-13734",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm1",
+            "source": "https://ubuntu.com/security/CVE-2017-13734"
+          },
+          {
+            "name": "CVE-2017-16879",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm2",
+            "source": "https://ubuntu.com/security/CVE-2017-16879"
+          },
+          {
+            "name": "CVE-2018-19211",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm2",
+            "source": "https://ubuntu.com/security/CVE-2018-19211"
+          },
+          {
+            "name": "CVE-2019-17595",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm2",
+            "source": "https://ubuntu.com/security/CVE-2019-17595"
+          }
+        ],
+        "failedPolicyMatches": []
+      },
+      {
+        "name": "libsystemd0",
+        "version": "229-4ubuntu21.31",
+        "vulnerabilities": [
+          {
+            "name": "CVE-2021-33910",
+            "severity": "HIGH",
+            "fixedVersion": "229-4ubuntu21.31+esm1",
+            "source": "https://ubuntu.com/security/CVE-2021-33910"
+          },
+          {
+            "name": "CVE-2020-13529",
+            "severity": "LOW",
+            "fixedVersion": "229-4ubuntu21.31+esm1",
+            "source": "https://people.canonical.com/~ubuntu-security/cve/CVE-2020-13529.html"
+          }
+        ],
+        "failedPolicyMatches": []
+      },
+      {
+        "name": "perl-base",
+        "version": "5.22.1-9ubuntu0.9",
+        "vulnerabilities": [
+          {
+            "name": "CVE-2020-16156",
+            "severity": "MEDIUM",
+            "fixedVersion": null,
+            "source": "https://ubuntu.com/security/CVE-2020-16156"
+          }
+        ],
+        "failedPolicyMatches": []
+      },
+      {
+        "name": "libuuid1",
+        "version": "2.27.1-6ubuntu3.10",
+        "vulnerabilities": [
+          {
+            "name": "CVE-2016-5011",
+            "severity": "LOW",
+            "fixedVersion": "2.27.1-6ubuntu3.10+esm2",
+            "source": "https://ubuntu.com/security/CVE-2016-5011"
+          }
+        ],
+        "failedPolicyMatches": []
+      },
+      {
+        "name": "libss2",
+        "version": "1.42.13-1ubuntu1.2",
+        "vulnerabilities": [
+          {
+            "name": "CVE-2022-1304",
+            "severity": "MEDIUM",
+            "fixedVersion": "1.42.13-1ubuntu1.2+esm1",
+            "source": "https://ubuntu.com/security/CVE-2022-1304"
+          }
+        ],
+        "failedPolicyMatches": []
+      },
+      {
+        "name": "libc6",
+        "version": "2.23-0ubuntu11.3",
+        "vulnerabilities": [
+          {
+            "name": "CVE-2021-3326",
+            "severity": "LOW",
+            "fixedVersion": null,
+            "source": "https://ubuntu.com/security/CVE-2021-3326"
+          },
+          {
+            "name": "CVE-2016-20013",
+            "severity": "LOW",
+            "fixedVersion": null,
+            "source": "https://ubuntu.com/security/CVE-2016-20013"
+          },
+          {
+            "name": "CVE-2016-10228",
+            "severity": "LOW",
+            "fixedVersion": null,
+            "source": "https://ubuntu.com/security/CVE-2016-10228"
+          },
+          {
+            "name": "CVE-2019-25013",
+            "severity": "LOW",
+            "fixedVersion": null,
+            "source": "https://ubuntu.com/security/CVE-2019-25013"
+          },
+          {
+            "name": "CVE-2022-23218",
+            "severity": "LOW",
+            "fixedVersion": "2.23-0ubuntu11.3+esm1",
+            "source": "https://people.canonical.com/~ubuntu-security/cve/CVE-2022-23218.html"
+          },
+          {
+            "name": "CVE-2022-23219",
+            "severity": "LOW",
+            "fixedVersion": "2.23-0ubuntu11.3+esm1",
+            "source": "https://ubuntu.com/security/CVE-2022-23219"
+          },
+          {
+            "name": "CVE-2017-12132",
+            "severity": "LOW",
+            "fixedVersion": null,
+            "source": "https://people.canonical.com/~ubuntu-security/cve/CVE-2017-12132.html"
+          },
+          {
+            "name": "CVE-2021-35942",
+            "severity": "LOW",
+            "fixedVersion": null,
+            "source": "https://ubuntu.com/security/CVE-2021-35942"
+          },
+          {
+            "name": "CVE-2020-27618",
+            "severity": "LOW",
+            "fixedVersion": null,
+            "source": "https://ubuntu.com/security/CVE-2020-27618"
+          },
+          {
+            "name": "CVE-2021-3999",
+            "severity": "MEDIUM",
+            "fixedVersion": "2.23-0ubuntu11.3+esm1",
+            "source": "https://ubuntu.com/security/CVE-2021-3999"
+          }
+        ],
+        "failedPolicyMatches": []
+      },
+      {
+        "name": "gnupg",
+        "version": "1.4.20-1ubuntu3.3",
+        "vulnerabilities": [
+          {
+            "name": "CVE-2019-14855",
+            "severity": "LOW",
+            "fixedVersion": null,
+            "source": "https://people.canonical.com/~ubuntu-security/cve/CVE-2019-14855.html"
+          },
+          {
+            "name": "CVE-2022-34903",
+            "severity": "MEDIUM",
+            "fixedVersion": "1.4.20-1ubuntu3.3+esm2",
+            "source": "https://ubuntu.com/security/CVE-2022-34903"
+          },
+          {
+            "name": "CVE-2019-13050",
+            "severity": "LOW",
+            "fixedVersion": null,
+            "source": "https://ubuntu.com/security/CVE-2019-13050"
+          }
+        ],
+        "failedPolicyMatches": []
+      },
+      {
+        "name": "gpgv",
+        "version": "1.4.20-1ubuntu3.3",
+        "vulnerabilities": [
+          {
+            "name": "CVE-2019-13050",
+            "severity": "LOW",
+            "fixedVersion": null,
+            "source": "https://ubuntu.com/security/CVE-2019-13050"
+          },
+          {
+            "name": "CVE-2019-14855",
+            "severity": "LOW",
+            "fixedVersion": null,
+            "source": "https://people.canonical.com/~ubuntu-security/cve/CVE-2019-14855.html"
+          },
+          {
+            "name": "CVE-2022-34903",
+            "severity": "MEDIUM",
+            "fixedVersion": "1.4.20-1ubuntu3.3+esm2",
+            "source": "https://ubuntu.com/security/CVE-2022-34903"
+          }
+        ],
+        "failedPolicyMatches": []
+      },
+      {
+        "name": "passwd",
+        "version": "1:4.2-3.1ubuntu5.4",
+        "vulnerabilities": [
+          {
+            "name": "CVE-2017-12424",
+            "severity": "LOW",
+            "fixedVersion": "1:4.2-3.1ubuntu5.5+esm1",
+            "source": "https://ubuntu.com/security/CVE-2017-12424"
+          },
+          {
+            "name": "CVE-2018-7169",
+            "severity": "LOW",
+            "fixedVersion": "1:4.2-3.1ubuntu5.5+esm1",
+            "source": "https://ubuntu.com/security/CVE-2018-7169"
+          },
+          {
+            "name": "CVE-2013-4235",
+            "severity": "LOW",
+            "fixedVersion": null,
+            "source": "https://ubuntu.com/security/CVE-2013-4235"
+          }
+        ],
+        "failedPolicyMatches": []
+      },
+      {
+        "name": "ncurses-base",
+        "version": "6.0+20160213-1ubuntu1",
+        "vulnerabilities": [
+          {
+            "name": "CVE-2017-13729",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm1",
+            "source": "https://ubuntu.com/security/CVE-2017-13729"
+          },
+          {
+            "name": "CVE-2017-13733",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm1",
+            "source": "https://ubuntu.com/security/CVE-2017-13733"
+          },
+          {
+            "name": "CVE-2018-19211",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm2",
+            "source": "https://ubuntu.com/security/CVE-2018-19211"
+          },
+          {
+            "name": "CVE-2021-39537",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm2",
+            "source": "https://ubuntu.com/security/CVE-2021-39537"
+          },
+          {
+            "name": "CVE-2019-17595",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm2",
+            "source": "https://ubuntu.com/security/CVE-2019-17595"
+          },
+          {
+            "name": "CVE-2022-29458",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm2",
+            "source": "https://ubuntu.com/security/CVE-2022-29458"
+          },
+          {
+            "name": "CVE-2017-13730",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm1",
+            "source": "https://ubuntu.com/security/CVE-2017-13730"
+          },
+          {
+            "name": "CVE-2017-13731",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm1",
+            "source": "https://ubuntu.com/security/CVE-2017-13731"
+          },
+          {
+            "name": "CVE-2017-13732",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm1",
+            "source": "https://ubuntu.com/security/CVE-2017-13732"
+          },
+          {
+            "name": "CVE-2019-17594",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm2",
+            "source": "https://people.canonical.com/~ubuntu-security/cve/CVE-2019-17594.html"
+          },
+          {
+            "name": "CVE-2017-10685",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm1",
+            "source": "https://people.canonical.com/~ubuntu-security/cve/CVE-2017-10685.html"
+          },
+          {
+            "name": "CVE-2017-11112",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm1",
+            "source": "https://ubuntu.com/security/CVE-2017-11112"
+          },
+          {
+            "name": "CVE-2017-11113",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm1",
+            "source": "https://ubuntu.com/security/CVE-2017-11113"
+          },
+          {
+            "name": "CVE-2017-13728",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm1",
+            "source": "https://ubuntu.com/security/CVE-2017-13728"
+          },
+          {
+            "name": "CVE-2017-10684",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm1",
+            "source": "https://ubuntu.com/security/CVE-2017-10684"
+          },
+          {
+            "name": "CVE-2017-13734",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm1",
+            "source": "https://ubuntu.com/security/CVE-2017-13734"
+          },
+          {
+            "name": "CVE-2017-16879",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm2",
+            "source": "https://ubuntu.com/security/CVE-2017-16879"
+          },
+          {
+            "name": "CVE-2018-19217",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm1",
+            "source": "https://people.canonical.com/~ubuntu-security/cve/CVE-2018-19217.html"
+          }
+        ],
+        "failedPolicyMatches": []
+      },
+      {
+        "name": "libsepol1",
+        "version": "2.4-2",
+        "vulnerabilities": [
+          {
+            "name": "CVE-2021-36084",
+            "severity": "LOW",
+            "fixedVersion": "2.4-2ubuntu0.1~esm1",
+            "source": "https://ubuntu.com/security/CVE-2021-36084"
+          },
+          {
+            "name": "CVE-2021-36085",
+            "severity": "LOW",
+            "fixedVersion": "2.4-2ubuntu0.1~esm1",
+            "source": "https://ubuntu.com/security/CVE-2021-36085"
+          },
+          {
+            "name": "CVE-2021-36087",
+            "severity": "LOW",
+            "fixedVersion": "2.4-2ubuntu0.1~esm1",
+            "source": "https://ubuntu.com/security/CVE-2021-36087"
+          }
+        ],
+        "failedPolicyMatches": []
+      },
+      {
+        "name": "tar",
+        "version": "1.28-2.1ubuntu0.2",
+        "vulnerabilities": [
+          {
+            "name": "CVE-2021-20193",
+            "severity": "LOW",
+            "fixedVersion": "1.28-2.1ubuntu0.2+esm1",
+            "source": "https://ubuntu.com/security/CVE-2021-20193"
+          }
+        ],
+        "failedPolicyMatches": []
+      },
+      {
+        "name": "libsmartcols1",
+        "version": "2.27.1-6ubuntu3.10",
+        "vulnerabilities": [
+          {
+            "name": "CVE-2016-5011",
+            "severity": "LOW",
+            "fixedVersion": "2.27.1-6ubuntu3.10+esm2",
+            "source": "https://ubuntu.com/security/CVE-2016-5011"
+          }
+        ],
+        "failedPolicyMatches": []
+      },
+      {
+        "name": "bash",
+        "version": "4.3-14ubuntu1.4",
+        "vulnerabilities": [
+          {
+            "name": "CVE-2019-18276",
+            "severity": "LOW",
+            "fixedVersion": "4.3-14ubuntu1.4+esm1",
+            "source": "https://ubuntu.com/security/CVE-2019-18276"
+          }
+        ],
+        "failedPolicyMatches": []
+      },
+      {
+        "name": "multiarch-support",
+        "version": "2.23-0ubuntu11.3",
+        "vulnerabilities": [
+          {
+            "name": "CVE-2021-3999",
+            "severity": "MEDIUM",
+            "fixedVersion": "2.23-0ubuntu11.3+esm1",
+            "source": "https://ubuntu.com/security/CVE-2021-3999"
+          },
+          {
+            "name": "CVE-2016-20013",
+            "severity": "LOW",
+            "fixedVersion": null,
+            "source": "https://ubuntu.com/security/CVE-2016-20013"
+          },
+          {
+            "name": "CVE-2022-23219",
+            "severity": "LOW",
+            "fixedVersion": "2.23-0ubuntu11.3+esm1",
+            "source": "https://ubuntu.com/security/CVE-2022-23219"
+          },
+          {
+            "name": "CVE-2021-3326",
+            "severity": "LOW",
+            "fixedVersion": null,
+            "source": "https://ubuntu.com/security/CVE-2021-3326"
+          },
+          {
+            "name": "CVE-2017-12132",
+            "severity": "LOW",
+            "fixedVersion": null,
+            "source": "https://people.canonical.com/~ubuntu-security/cve/CVE-2017-12132.html"
+          },
+          {
+            "name": "CVE-2022-23218",
+            "severity": "LOW",
+            "fixedVersion": "2.23-0ubuntu11.3+esm1",
+            "source": "https://people.canonical.com/~ubuntu-security/cve/CVE-2022-23218.html"
+          },
+          {
+            "name": "CVE-2019-25013",
+            "severity": "LOW",
+            "fixedVersion": null,
+            "source": "https://ubuntu.com/security/CVE-2019-25013"
+          },
+          {
+            "name": "CVE-2020-27618",
+            "severity": "LOW",
+            "fixedVersion": null,
+            "source": "https://ubuntu.com/security/CVE-2020-27618"
+          },
+          {
+            "name": "CVE-2016-10228",
+            "severity": "LOW",
+            "fixedVersion": null,
+            "source": "https://ubuntu.com/security/CVE-2016-10228"
+          },
+          {
+            "name": "CVE-2021-35942",
+            "severity": "LOW",
+            "fixedVersion": null,
+            "source": "https://ubuntu.com/security/CVE-2021-35942"
+          }
+        ],
+        "failedPolicyMatches": []
+      },
+      {
+        "name": "dpkg",
+        "version": "1.18.4ubuntu1.7",
+        "vulnerabilities": [
+          {
+            "name": "CVE-2022-1664",
+            "severity": "MEDIUM",
+            "fixedVersion": "1.18.4ubuntu1.7+esm1",
+            "source": "https://people.canonical.com/~ubuntu-security/cve/CVE-2022-1664.html"
+          }
+        ],
+        "failedPolicyMatches": []
+      },
+      {
+        "name": "libfdisk1",
+        "version": "2.27.1-6ubuntu3.10",
+        "vulnerabilities": [
+          {
+            "name": "CVE-2016-5011",
+            "severity": "LOW",
+            "fixedVersion": "2.27.1-6ubuntu3.10+esm2",
+            "source": "https://ubuntu.com/security/CVE-2016-5011"
+          }
+        ],
+        "failedPolicyMatches": []
+      },
+      {
+        "name": "util-linux",
+        "version": "2.27.1-6ubuntu3.10",
+        "vulnerabilities": [
+          {
+            "name": "CVE-2016-5011",
+            "severity": "LOW",
+            "fixedVersion": "2.27.1-6ubuntu3.10+esm2",
+            "source": "https://ubuntu.com/security/CVE-2016-5011"
+          }
+        ],
+        "failedPolicyMatches": []
+      },
+      {
+        "name": "coreutils",
+        "version": "8.25-2ubuntu3~16.04",
+        "vulnerabilities": [
+          {
+            "name": "CVE-2016-2781",
+            "severity": "LOW",
+            "fixedVersion": null,
+            "source": "https://people.canonical.com/~ubuntu-security/cve/CVE-2016-2781.html"
+          }
+        ],
+        "failedPolicyMatches": []
+      },
+      {
+        "name": "mount",
+        "version": "2.27.1-6ubuntu3.10",
+        "vulnerabilities": [
+          {
+            "name": "CVE-2016-5011",
+            "severity": "LOW",
+            "fixedVersion": "2.27.1-6ubuntu3.10+esm2",
+            "source": "https://ubuntu.com/security/CVE-2016-5011"
+          }
+        ],
+        "failedPolicyMatches": []
+      },
+      {
+        "name": "zlib1g",
+        "version": "1:1.2.8.dfsg-2ubuntu4.3",
+        "vulnerabilities": [
+          {
+            "name": "CVE-2018-25032",
+            "severity": "MEDIUM",
+            "fixedVersion": "1:1.2.8.dfsg-2ubuntu4.3+esm1",
+            "source": "https://ubuntu.com/security/CVE-2018-25032"
+          },
+          {
+            "name": "CVE-2022-37434",
+            "severity": "MEDIUM",
+            "fixedVersion": "1:1.2.8.dfsg-2ubuntu4.3+esm2",
+            "source": "https://ubuntu.com/security/CVE-2022-37434"
+          }
+        ],
+        "failedPolicyMatches": []
+      },
+      {
+        "name": "libapparmor1",
+        "version": "2.10.95-0ubuntu2.11",
+        "vulnerabilities": [
+          {
+            "name": "CVE-2016-1585",
+            "severity": "MEDIUM",
+            "fixedVersion": null,
+            "source": "https://people.canonical.com/~ubuntu-security/cve/CVE-2016-1585.html"
+          }
+        ],
+        "failedPolicyMatches": []
+      },
+      {
+        "name": "libc-bin",
+        "version": "2.23-0ubuntu11.3",
+        "vulnerabilities": [
+          {
+            "name": "CVE-2021-35942",
+            "severity": "LOW",
+            "fixedVersion": null,
+            "source": "https://ubuntu.com/security/CVE-2021-35942"
+          },
+          {
+            "name": "CVE-2022-23218",
+            "severity": "LOW",
+            "fixedVersion": "2.23-0ubuntu11.3+esm1",
+            "source": "https://people.canonical.com/~ubuntu-security/cve/CVE-2022-23218.html"
+          },
+          {
+            "name": "CVE-2016-10228",
+            "severity": "LOW",
+            "fixedVersion": null,
+            "source": "https://ubuntu.com/security/CVE-2016-10228"
+          },
+          {
+            "name": "CVE-2017-12132",
+            "severity": "LOW",
+            "fixedVersion": null,
+            "source": "https://people.canonical.com/~ubuntu-security/cve/CVE-2017-12132.html"
+          },
+          {
+            "name": "CVE-2021-3326",
+            "severity": "LOW",
+            "fixedVersion": null,
+            "source": "https://ubuntu.com/security/CVE-2021-3326"
+          },
+          {
+            "name": "CVE-2019-25013",
+            "severity": "LOW",
+            "fixedVersion": null,
+            "source": "https://ubuntu.com/security/CVE-2019-25013"
+          },
+          {
+            "name": "CVE-2021-3999",
+            "severity": "MEDIUM",
+            "fixedVersion": "2.23-0ubuntu11.3+esm1",
+            "source": "https://ubuntu.com/security/CVE-2021-3999"
+          },
+          {
+            "name": "CVE-2022-23219",
+            "severity": "LOW",
+            "fixedVersion": "2.23-0ubuntu11.3+esm1",
+            "source": "https://ubuntu.com/security/CVE-2022-23219"
+          },
+          {
+            "name": "CVE-2020-27618",
+            "severity": "LOW",
+            "fixedVersion": null,
+            "source": "https://ubuntu.com/security/CVE-2020-27618"
+          },
+          {
+            "name": "CVE-2016-20013",
+            "severity": "LOW",
+            "fixedVersion": null,
+            "source": "https://ubuntu.com/security/CVE-2016-20013"
+          }
+        ],
+        "failedPolicyMatches": []
+      },
+      {
+        "name": "libgcrypt20",
+        "version": "1.6.5-2ubuntu0.6",
+        "vulnerabilities": [
+          {
+            "name": "CVE-2021-33560",
+            "severity": "LOW",
+            "fixedVersion": "1.6.5-2ubuntu0.6+esm1",
+            "source": "https://ubuntu.com/security/CVE-2021-33560"
+          },
+          {
+            "name": "CVE-2021-40528",
+            "severity": "MEDIUM",
+            "fixedVersion": "1.6.5-2ubuntu0.6+esm1",
+            "source": "https://ubuntu.com/security/CVE-2021-40528"
+          }
+        ],
+        "failedPolicyMatches": []
+      },
+      {
+        "name": "ncurses-bin",
+        "version": "6.0+20160213-1ubuntu1",
+        "vulnerabilities": [
+          {
+            "name": "CVE-2017-11112",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm1",
+            "source": "https://ubuntu.com/security/CVE-2017-11112"
+          },
+          {
+            "name": "CVE-2017-13730",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm1",
+            "source": "https://ubuntu.com/security/CVE-2017-13730"
+          },
+          {
+            "name": "CVE-2018-19217",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm1",
+            "source": "https://people.canonical.com/~ubuntu-security/cve/CVE-2018-19217.html"
+          },
+          {
+            "name": "CVE-2018-19211",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm2",
+            "source": "https://ubuntu.com/security/CVE-2018-19211"
+          },
+          {
+            "name": "CVE-2017-10684",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm1",
+            "source": "https://ubuntu.com/security/CVE-2017-10684"
+          },
+          {
+            "name": "CVE-2017-13729",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm1",
+            "source": "https://ubuntu.com/security/CVE-2017-13729"
+          },
+          {
+            "name": "CVE-2017-13734",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm1",
+            "source": "https://ubuntu.com/security/CVE-2017-13734"
+          },
+          {
+            "name": "CVE-2017-16879",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm2",
+            "source": "https://ubuntu.com/security/CVE-2017-16879"
+          },
+          {
+            "name": "CVE-2019-17594",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm2",
+            "source": "https://people.canonical.com/~ubuntu-security/cve/CVE-2019-17594.html"
+          },
+          {
+            "name": "CVE-2022-29458",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm2",
+            "source": "https://ubuntu.com/security/CVE-2022-29458"
+          },
+          {
+            "name": "CVE-2017-10685",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm1",
+            "source": "https://people.canonical.com/~ubuntu-security/cve/CVE-2017-10685.html"
+          },
+          {
+            "name": "CVE-2017-11113",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm1",
+            "source": "https://ubuntu.com/security/CVE-2017-11113"
+          },
+          {
+            "name": "CVE-2017-13728",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm1",
+            "source": "https://ubuntu.com/security/CVE-2017-13728"
+          },
+          {
+            "name": "CVE-2019-17595",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm2",
+            "source": "https://ubuntu.com/security/CVE-2019-17595"
+          },
+          {
+            "name": "CVE-2021-39537",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm2",
+            "source": "https://ubuntu.com/security/CVE-2021-39537"
+          },
+          {
+            "name": "CVE-2017-13731",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm1",
+            "source": "https://ubuntu.com/security/CVE-2017-13731"
+          },
+          {
+            "name": "CVE-2017-13732",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm1",
+            "source": "https://ubuntu.com/security/CVE-2017-13732"
+          },
+          {
+            "name": "CVE-2017-13733",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm1",
+            "source": "https://ubuntu.com/security/CVE-2017-13733"
+          }
+        ],
+        "failedPolicyMatches": []
+      },
+      {
+        "name": "liblz4-1",
+        "version": "0.0~r131-2ubuntu2",
+        "vulnerabilities": [
+          {
+            "name": "CVE-2021-3520",
+            "severity": "MEDIUM",
+            "fixedVersion": "0.0~r131-2ubuntu2+esm1",
+            "source": "https://ubuntu.com/security/CVE-2021-3520"
+          }
+        ],
+        "failedPolicyMatches": []
+      },
+      {
+        "name": "e2fsprogs",
+        "version": "1.42.13-1ubuntu1.2",
+        "vulnerabilities": [
+          {
+            "name": "CVE-2022-1304",
+            "severity": "MEDIUM",
+            "fixedVersion": "1.42.13-1ubuntu1.2+esm1",
+            "source": "https://ubuntu.com/security/CVE-2022-1304"
+          }
+        ],
+        "failedPolicyMatches": []
+      },
+      {
+        "name": "libudev1",
+        "version": "229-4ubuntu21.31",
+        "vulnerabilities": [
+          {
+            "name": "CVE-2020-13529",
+            "severity": "LOW",
+            "fixedVersion": "229-4ubuntu21.31+esm1",
+            "source": "https://people.canonical.com/~ubuntu-security/cve/CVE-2020-13529.html"
+          },
+          {
+            "name": "CVE-2021-33910",
+            "severity": "HIGH",
+            "fixedVersion": "229-4ubuntu21.31+esm1",
+            "source": "https://ubuntu.com/security/CVE-2021-33910"
+          }
+        ],
+        "failedPolicyMatches": []
+      },
+      {
+        "name": "systemd-sysv",
+        "version": "229-4ubuntu21.31",
+        "vulnerabilities": [
+          {
+            "name": "CVE-2021-33910",
+            "severity": "HIGH",
+            "fixedVersion": "229-4ubuntu21.31+esm1",
+            "source": "https://ubuntu.com/security/CVE-2021-33910"
+          },
+          {
+            "name": "CVE-2020-13529",
+            "severity": "LOW",
+            "fixedVersion": "229-4ubuntu21.31+esm1",
+            "source": "https://people.canonical.com/~ubuntu-security/cve/CVE-2020-13529.html"
+          }
+        ],
+        "failedPolicyMatches": []
+      },
+      {
+        "name": "libncurses5",
+        "version": "6.0+20160213-1ubuntu1",
+        "vulnerabilities": [
+          {
+            "name": "CVE-2018-19217",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm1",
+            "source": "https://people.canonical.com/~ubuntu-security/cve/CVE-2018-19217.html"
+          },
+          {
+            "name": "CVE-2019-17595",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm2",
+            "source": "https://ubuntu.com/security/CVE-2019-17595"
+          },
+          {
+            "name": "CVE-2022-29458",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm2",
+            "source": "https://ubuntu.com/security/CVE-2022-29458"
+          },
+          {
+            "name": "CVE-2017-13730",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm1",
+            "source": "https://ubuntu.com/security/CVE-2017-13730"
+          },
+          {
+            "name": "CVE-2017-13729",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm1",
+            "source": "https://ubuntu.com/security/CVE-2017-13729"
+          },
+          {
+            "name": "CVE-2017-16879",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm2",
+            "source": "https://ubuntu.com/security/CVE-2017-16879"
+          },
+          {
+            "name": "CVE-2018-19211",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm2",
+            "source": "https://ubuntu.com/security/CVE-2018-19211"
+          },
+          {
+            "name": "CVE-2019-17594",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm2",
+            "source": "https://people.canonical.com/~ubuntu-security/cve/CVE-2019-17594.html"
+          },
+          {
+            "name": "CVE-2017-11112",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm1",
+            "source": "https://ubuntu.com/security/CVE-2017-11112"
+          },
+          {
+            "name": "CVE-2017-13728",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm1",
+            "source": "https://ubuntu.com/security/CVE-2017-13728"
+          },
+          {
+            "name": "CVE-2017-13731",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm1",
+            "source": "https://ubuntu.com/security/CVE-2017-13731"
+          },
+          {
+            "name": "CVE-2017-13734",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm1",
+            "source": "https://ubuntu.com/security/CVE-2017-13734"
+          },
+          {
+            "name": "CVE-2017-10685",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm1",
+            "source": "https://people.canonical.com/~ubuntu-security/cve/CVE-2017-10685.html"
+          },
+          {
+            "name": "CVE-2017-11113",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm1",
+            "source": "https://ubuntu.com/security/CVE-2017-11113"
+          },
+          {
+            "name": "CVE-2017-13732",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm1",
+            "source": "https://ubuntu.com/security/CVE-2017-13732"
+          },
+          {
+            "name": "CVE-2017-13733",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm1",
+            "source": "https://ubuntu.com/security/CVE-2017-13733"
+          },
+          {
+            "name": "CVE-2021-39537",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm2",
+            "source": "https://ubuntu.com/security/CVE-2021-39537"
+          },
+          {
+            "name": "CVE-2017-10684",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm1",
+            "source": "https://ubuntu.com/security/CVE-2017-10684"
+          }
+        ],
+        "failedPolicyMatches": []
+      },
+      {
+        "name": "login",
+        "version": "1:4.2-3.1ubuntu5.4",
+        "vulnerabilities": [
+          {
+            "name": "CVE-2018-7169",
+            "severity": "LOW",
+            "fixedVersion": "1:4.2-3.1ubuntu5.5+esm1",
+            "source": "https://ubuntu.com/security/CVE-2018-7169"
+          },
+          {
+            "name": "CVE-2013-4235",
+            "severity": "LOW",
+            "fixedVersion": null,
+            "source": "https://ubuntu.com/security/CVE-2013-4235"
+          },
+          {
+            "name": "CVE-2017-12424",
+            "severity": "LOW",
+            "fixedVersion": "1:4.2-3.1ubuntu5.5+esm1",
+            "source": "https://ubuntu.com/security/CVE-2017-12424"
+          }
+        ],
+        "failedPolicyMatches": []
+      },
+      {
+        "name": "libmount1",
+        "version": "2.27.1-6ubuntu3.10",
+        "vulnerabilities": [
+          {
+            "name": "CVE-2016-5011",
+            "severity": "LOW",
+            "fixedVersion": "2.27.1-6ubuntu3.10+esm2",
+            "source": "https://ubuntu.com/security/CVE-2016-5011"
+          }
+        ],
+        "failedPolicyMatches": []
+      },
+      {
+        "name": "gzip",
+        "version": "1.6-4ubuntu1",
+        "vulnerabilities": [
+          {
+            "name": "CVE-2022-1271",
+            "severity": "MEDIUM",
+            "fixedVersion": "1.6-4ubuntu1+esm1",
+            "source": "https://ubuntu.com/security/CVE-2022-1271"
+          }
+        ],
+        "failedPolicyMatches": []
+      },
+      {
+        "name": "systemd",
+        "version": "229-4ubuntu21.31",
+        "vulnerabilities": [
+          {
+            "name": "CVE-2020-13529",
+            "severity": "LOW",
+            "fixedVersion": "229-4ubuntu21.31+esm1",
+            "source": "https://people.canonical.com/~ubuntu-security/cve/CVE-2020-13529.html"
+          },
+          {
+            "name": "CVE-2021-33910",
+            "severity": "HIGH",
+            "fixedVersion": "229-4ubuntu21.31+esm1",
+            "source": "https://ubuntu.com/security/CVE-2021-33910"
+          }
+        ],
+        "failedPolicyMatches": []
+      },
+      {
+        "name": "libcomerr2",
+        "version": "1.42.13-1ubuntu1.2",
+        "vulnerabilities": [
+          {
+            "name": "CVE-2022-1304",
+            "severity": "MEDIUM",
+            "fixedVersion": "1.42.13-1ubuntu1.2+esm1",
+            "source": "https://ubuntu.com/security/CVE-2022-1304"
+          }
+        ],
+        "failedPolicyMatches": []
+      },
+      {
+        "name": "libncursesw5",
+        "version": "6.0+20160213-1ubuntu1",
+        "vulnerabilities": [
+          {
+            "name": "CVE-2017-10684",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm1",
+            "source": "https://ubuntu.com/security/CVE-2017-10684"
+          },
+          {
+            "name": "CVE-2017-10685",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm1",
+            "source": "https://people.canonical.com/~ubuntu-security/cve/CVE-2017-10685.html"
+          },
+          {
+            "name": "CVE-2017-13734",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm1",
+            "source": "https://ubuntu.com/security/CVE-2017-13734"
+          },
+          {
+            "name": "CVE-2018-19217",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm1",
+            "source": "https://people.canonical.com/~ubuntu-security/cve/CVE-2018-19217.html"
+          },
+          {
+            "name": "CVE-2019-17595",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm2",
+            "source": "https://ubuntu.com/security/CVE-2019-17595"
+          },
+          {
+            "name": "CVE-2017-13728",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm1",
+            "source": "https://ubuntu.com/security/CVE-2017-13728"
+          },
+          {
+            "name": "CVE-2017-13732",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm1",
+            "source": "https://ubuntu.com/security/CVE-2017-13732"
+          },
+          {
+            "name": "CVE-2017-13731",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm1",
+            "source": "https://ubuntu.com/security/CVE-2017-13731"
+          },
+          {
+            "name": "CVE-2017-16879",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm2",
+            "source": "https://ubuntu.com/security/CVE-2017-16879"
+          },
+          {
+            "name": "CVE-2018-19211",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm2",
+            "source": "https://ubuntu.com/security/CVE-2018-19211"
+          },
+          {
+            "name": "CVE-2021-39537",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm2",
+            "source": "https://ubuntu.com/security/CVE-2021-39537"
+          },
+          {
+            "name": "CVE-2022-29458",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm2",
+            "source": "https://ubuntu.com/security/CVE-2022-29458"
+          },
+          {
+            "name": "CVE-2017-11112",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm1",
+            "source": "https://ubuntu.com/security/CVE-2017-11112"
+          },
+          {
+            "name": "CVE-2017-11113",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm1",
+            "source": "https://ubuntu.com/security/CVE-2017-11113"
+          },
+          {
+            "name": "CVE-2017-13729",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm1",
+            "source": "https://ubuntu.com/security/CVE-2017-13729"
+          },
+          {
+            "name": "CVE-2017-13730",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm1",
+            "source": "https://ubuntu.com/security/CVE-2017-13730"
+          },
+          {
+            "name": "CVE-2017-13733",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm1",
+            "source": "https://ubuntu.com/security/CVE-2017-13733"
+          },
+          {
+            "name": "CVE-2019-17594",
+            "severity": "LOW",
+            "fixedVersion": "6.0+20160213-1ubuntu1+esm2",
+            "source": "https://people.canonical.com/~ubuntu-security/cve/CVE-2019-17594.html"
+          }
+        ],
+        "failedPolicyMatches": []
+      },
+      {
+        "name": "liblzma5",
+        "version": "5.1.1alpha+20120614-2ubuntu2",
+        "vulnerabilities": [
+          {
+            "name": "CVE-2022-1271",
+            "severity": "MEDIUM",
+            "fixedVersion": "5.1.1alpha+20120614-2ubuntu2.16.04.1+esm1",
+            "source": "https://ubuntu.com/security/CVE-2022-1271"
+          }
+        ],
+        "failedPolicyMatches": []
+      },
+      {
+        "name": "libzstd1",
+        "version": "1.3.1+dfsg-1~ubuntu0.16.04.1",
+        "vulnerabilities": [
+          {
+            "name": "CVE-2019-11922",
+            "severity": "MEDIUM",
+            "fixedVersion": "1.3.1+dfsg-1~ubuntu0.16.04.1+esm2",
+            "source": "https://ubuntu.com/security/CVE-2019-11922"
+          }
+        ],
+        "failedPolicyMatches": []
+      },
+      {
+        "name": "bsdutils",
+        "version": "1:2.27.1-6ubuntu3.10",
+        "vulnerabilities": [
+          {
+            "name": "CVE-2016-5011",
+            "severity": "LOW",
+            "fixedVersion": "2.27.1-6ubuntu3.10+esm2",
+            "source": "https://ubuntu.com/security/CVE-2016-5011"
+          }
+        ],
+        "failedPolicyMatches": []
+      },
+      {
+        "name": "libpcre3",
+        "version": "2:8.38-3.1",
+        "vulnerabilities": [
+          {
+            "name": "CVE-2017-7186",
+            "severity": "LOW",
+            "fixedVersion": null,
+            "source": "https://ubuntu.com/security/CVE-2017-7186"
+          },
+          {
+            "name": "CVE-2017-7244",
+            "severity": "LOW",
+            "fixedVersion": null,
+            "source": "https://ubuntu.com/security/CVE-2017-7244"
+          },
+          {
+            "name": "CVE-2020-14155",
+            "severity": "LOW",
+            "fixedVersion": "2:8.38-3.1ubuntu0.1~esm1",
+            "source": "https://ubuntu.com/security/CVE-2020-14155"
+          },
+          {
+            "name": "CVE-2017-11164",
+            "severity": "LOW",
+            "fixedVersion": null,
+            "source": "https://people.canonical.com/~ubuntu-security/cve/CVE-2017-11164.html"
+          },
+          {
+            "name": "CVE-2017-6004",
+            "severity": "LOW",
+            "fixedVersion": null,
+            "source": "https://ubuntu.com/security/CVE-2017-6004"
+          }
+        ],
+        "failedPolicyMatches": []
+      }
+    ],
+    "libraries": [
+      {
+        "name": "org.yaml:snakeyaml",
+        "version": "1.32",
+        "path": "/app/app.jar",
+        "vulnerabilities": [
+          {
+            "name": "CVE-2022-1471",
+            "severity": "HIGH",
+            "fixedVersion": null,
+            "source": "https://github.com/advisories/GHSA-mjmj-j48q-9wg2"
+          }
+        ],
+        "detectionMethod": "LIBRARY",
+        "failedPolicyMatches": []
+      },
+      {
+        "name": "org.springframework:spring-core",
+        "version": "5.3.24",
+        "path": "/app/app.jar",
+        "vulnerabilities": [
+          {
+            "name": "CVE-2016-1000027",
+            "severity": "MEDIUM",
+            "fixedVersion": "6.0.0",
+            "source": "https://github.com/advisories/GHSA-4wrc-f8pq-fpqp"
+          }
+        ],
+        "detectionMethod": "LIBRARY",
+        "failedPolicyMatches": []
+      }
+    ],
+    "applications": null,
+    "cpes": [
+      {
+        "name": "cpe:2.3:a:oracle:jdk",
+        "version": "17.0.6",
+        "path": "cpes",
+        "vulnerabilities": [
+          {
+            "name": "CVE-2022-45146",
+            "severity": "MEDIUM",
+            "fixedVersion": null,
+            "source": "https://nvd.nist.gov/vuln/detail/CVE-2022-45146"
+          },
+          {
+            "name": "CVE-2022-45146",
+            "severity": "MEDIUM",
+            "fixedVersion": null,
+            "source": "https://nvd.nist.gov/vuln/detail/CVE-2022-45146"
+          }
+        ],
+        "detectionMethod": "FILE_PATH",
+        "failedPolicyMatches": []
+      },
+      {
+        "name": "cpe:2.3:a:oracle:jdk",
+        "version": "17.0.6",
+        "path": "cpes",
+        "vulnerabilities": [
+          {
+            "name": "CVE-2022-45146",
+            "severity": "MEDIUM",
+            "fixedVersion": null,
+            "source": "https://nvd.nist.gov/vuln/detail/CVE-2022-45146"
+          },
+          {
+            "name": "CVE-2022-45146",
+            "severity": "MEDIUM",
+            "fixedVersion": null,
+            "source": "https://nvd.nist.gov/vuln/detail/CVE-2022-45146"
+          }
+        ],
+        "detectionMethod": "FILE_PATH",
+        "failedPolicyMatches": []
+      }
+    ],
+    "secrets": null,
+    "failedPolicyMatches": [],
+    "analytics": {
+      "vulnerabilities": {
+        "criticalCount": 0,
+        "highCount": 4,
+        "mediumCount": 19,
+        "lowCount": 151,
+        "infoCount": 0
+      },
+      "secrets": {
+        "cloudKeyCount": 0,
+        "gitCredentialCount": 0,
+        "dbConnectionStringCount": 0,
+        "privateKeyCount": 0,
+        "passwordCount": 0
+      }
+    }
+  }
+}
 
 more text
 more more

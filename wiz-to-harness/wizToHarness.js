@@ -121,7 +121,8 @@ let result = {
     meta: {
         key: [
             "packageName"
-        ]
+        ],
+        "subproduct": "Wiz"
     },
     issues: flattened
 }

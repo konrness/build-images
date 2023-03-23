@@ -14,6 +14,11 @@ Settings:
 node /home/wizToHarness.js /harness/wizoriginal.json /harness/wizharness.json
 ```
 
+## Docker Build
+```
+docker build -t wiz-to-harness .
+```
+
 ## Test
 ```
 docker run --rm --env-file ./.env -v $(pwd)/tests:/home/tests wiz-to-harness

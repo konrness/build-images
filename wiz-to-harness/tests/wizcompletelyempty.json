@@ -1,0 +1,66 @@
+{"id": "c83af971-cd59-44ea-b03a-0cdd35f6a5af",
+  "projects": null,
+  "createdAt": "2023-03-22T14:00:57.640837613Z",
+  "createdBy": {
+    "serviceAccount": {
+      "id": "**************"
+    },
+    "user": null
+  },
+  "status": {
+    "state": "SUCCESS",
+    "verdict": "PASSED_BY_POLICY",
+    "details": null
+  },
+  "policies": [
+    {
+      "id": "b593862c-32fa-4181-9390-411ca1eafb07",
+      "name": "High Policy",
+      "description": null,
+      "type": "VULNERABILITIES",
+      "builtin": false,
+      "projects": null,
+      "params": {
+        "__typename": "cicdscanpolicyparamsvulnerabilities",
+        "severity": "HIGH",
+        "packageCountThreshold": 1,
+        "ignoreUnfixed": true,
+        "packageAllowList": [],
+        "detectionMethods": null
+      }
+    }
+  ],
+  "extraInfo": null,
+  "tags": null,
+  "outdatedPolicies": [],
+  "scanOriginResource": {
+    "__typename": "CICDScanOriginContainerImage",
+    "name": "cwo_eventcommon_1.0.1.tar"
+  },
+  "result": {
+    "__typename": "CICDDiskScanResult",
+    "osPackages": null,
+    "libraries": null,
+    "applications": null,
+    "cpes": null,
+    "secrets": null,
+    "failedPolicyMatches": [],
+    "analytics": {
+      "vulnerabilities": {
+        "criticalCount": 0,
+        "highCount": 0,
+        "mediumCount": 0,
+        "lowCount": 0,
+        "infoCount": 0,
+        "unfixedCount": 0
+      },
+      "secrets": {
+        "cloudKeyCount": 0,
+        "gitCredentialCount": 0,
+        "dbConnectionStringCount": 0,
+        "privateKeyCount": 0,
+        "passwordCount": 0
+      }
+    }
+  }
+}

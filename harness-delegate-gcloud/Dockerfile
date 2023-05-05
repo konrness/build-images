@@ -1,4 +1,4 @@
-FROM harness/delegate:latest
+FROM app.harness.io/registry/harness/delegate:latest
 
 LABEL maintainer="konrness@gmail.com"
 LABEL source="https://github.com/konrness/build-images"

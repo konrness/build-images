@@ -115,6 +115,30 @@ if (null != data.result.cpes && data.result.cpes.length > 0) {
     flattened = flattened.concat(libraries);
 }
 
+
+// Parse IAC Policy Matches
+if (null != data.result.ruleMatches && data.result.ruleMatches.length > 0) {
+    console.debug("Parsing IAC Policy Matches");
+
+    let libraries = data.result.ruleMatches.flatMap((item) => {
+        return item.matches.map((v) => ({
+            issueName: item.rule.name,
+            issueDescription: v.resourceName + " -- " + v.found,
+            issueType: "IAC - " + v.fileType,
+            fileName: v.fileName,
+            lineNumber: v.lineNumber,
+            scanTool: "Wiz IAC",
+            scanSeverity: item.severity,
+            severity: SEVMAP[item.severity] ? SEVMAP[item.severity] : 0,
+            remediationSteps: v.expected
+        }));
+    });
+
+    console.debug(" - Found ", libraries.length);
+
+    flattened = flattened.concat(libraries);
+}
+
 console.debug("Total count: ", flattened.length);
 
 let result = {

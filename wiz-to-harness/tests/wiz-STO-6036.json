@@ -1,0 +1,1521 @@
+{"id": "802f1ddf-271a-4c93-9afb-7d2c093dcf11",
+  "projects": null,
+  "createdAt": "2023-06-05T07:49:17.754406823Z",
+  "startedAt": "0001-01-01T00:00:00Z",
+  "createdBy": {
+    "serviceAccount": {
+      "id": "**************"
+    }
+  },
+  "status": {
+    "state": "SUCCESS",
+    "verdict": "FAILED_BY_POLICY"
+  },
+  "policies": [
+    {
+      "id": "a9fa7aad-923b-4c30-b52d-605a50731303",
+      "name": "StgPrdIacPolicy",
+      "description": null,
+      "type": "IAC",
+      "builtin": false,
+      "projects": null,
+      "policyLifecycleEnforcements": null,
+      "params": {
+        "__typename": "cicdscanpolicyparamsiac",
+        "severityThreshold": "MEDIUM",
+        "countThreshold": 1,
+        "ignoredRules": null,
+        "validatableIgnoredRules": null,
+        "builtinIgnoreTagsEnabled": false,
+        "customIgnoreTags": null,
+        "securityFrameworks": null
+      }
+    }
+  ],
+  "extraInfo": null,
+  "tags": null,
+  "outdatedPolicies": [],
+  "scanOriginResource": {
+    "__typename": "CICDScanOriginIac",
+    "name": "IAC scan 2023-06-05T07:47:05Z",
+    "subTypes": [
+      "TERRAFORM",
+      "KUBERNETES"
+    ]
+  },
+  "result": {
+    "__typename": "CICDIACScanResult",
+    "failedPolicyMatches": [
+      {
+        "policy": {
+          "id": "a9fa7aad-923b-4c30-b52d-605a50731303",
+          "name": "StgPrdIacPolicy",
+          "description": null,
+          "type": "IAC",
+          "builtin": false,
+          "projects": null,
+          "policyLifecycleEnforcements": null,
+          "params": {
+            "__typename": "cicdscanpolicyparamsiac",
+            "severityThreshold": "MEDIUM",
+            "countThreshold": 1,
+            "ignoredRules": null,
+            "validatableIgnoredRules": null,
+            "builtinIgnoreTagsEnabled": false,
+            "customIgnoreTags": null,
+            "securityFrameworks": null
+          }
+        }
+      }
+    ],
+    "ruleMatches": [
+      {
+        "rule": {
+          "id": "12224ee3-0a8c-499f-b2c9-4e75aa728b61",
+          "name": "Ensure Administrative Boundaries Between Resources"
+        },
+        "severity": "INFORMATIONAL",
+        "failedResourceCount": 1,
+        "failedPolicyMatches": [],
+        "matches": [
+          {
+            "failedPolicies": [],
+            "resourceName": "metadata.namespace={{common-payment-module-ui}}",
+            "fileName": "EKS/harness/k8s-ingress/dev/useast1/Ingress/ingress-commonPaymentModule-ui.yml",
+            "lineNumber": 25,
+            "matchContent": " namespace: common-payment-module-ui",
+            "expected": "ensure that these namespaces are the ones you need and are adequately administered as per your requirements.",
+            "found": "namespaces in use: redacted-ui, common-payment-module-ui, commonmodules-ui, redactedmanagement-ui, gsapp-ui, istio-system, redacted-ui, kubernetes-dashboard, training-ui",
+            "fileType": "KUBERNETES"
+          }
+        ]
+      },
+      {
+        "rule": {
+          "id": "64a8e904-ac43-4865-8c63-818f55ae677d",
+          "name": "Using Kubernetes Native Secret Management"
+        },
+        "severity": "INFORMATIONAL",
+        "failedResourceCount": 3,
+        "failedPolicyMatches": [],
+        "matches": [
+          {
+            "failedPolicies": [],
+            "resourceName": "metadata.name={{kubernetes-dashboard-certs}}",
+            "fileName": "EKS/harness/k8s-dashboard/useast1/k8s-dashboard-RO.yaml",
+            "lineNumber": 56,
+            "matchContent": " name: kubernetes-dashboard-certs",
+            "expected": "External secret storage should be used",
+            "found": "External secret storage is not in use",
+            "fileType": "KUBERNETES"
+          },
+          {
+            "failedPolicies": [],
+            "resourceName": "metadata.name={{kubernetes-dashboard-csrf}}",
+            "fileName": "EKS/harness/k8s-dashboard/useast1/k8s-dashboard-RO.yaml",
+            "lineNumber": 67,
+            "matchContent": " name: kubernetes-dashboard-csrf",
+            "expected": "External secret storage should be used",
+            "found": "External secret storage is not in use",
+            "fileType": "KUBERNETES"
+          },
+          {
+            "failedPolicies": [],
+            "resourceName": "metadata.name={{kubernetes-dashboard-key-holder}}",
+            "fileName": "EKS/harness/k8s-dashboard/useast1/k8s-dashboard-RO.yaml",
+            "lineNumber": 80,
+            "matchContent": " name: kubernetes-dashboard-key-holder",
+            "expected": "External secret storage should be used",
+            "found": "External secret storage is not in use",
+            "fileType": "KUBERNETES"
+          }
+        ]
+      },
+      {
+        "rule": {
+          "id": "0b2bd233-932a-4b44-b54e-602a9d594a51",
+          "name": "Image Without Digest"
+        },
+        "severity": "LOW",
+        "failedResourceCount": 2,
+        "failedPolicyMatches": [],
+        "matches": [
+          {
+            "failedPolicies": [],
+            "resourceName": "metadata.name={{dashboard-metrics-scraper}}.spec.template.spec.containers.name={{dashboard-metrics-scraper}}.image",
+            "fileName": "EKS/harness/k8s-dashboard/useast1/k8s-dashboard-RO.yaml",
+            "lineNumber": 302,
+            "matchContent": " image: kubernetesui/metrics-scraper:v1.0.6",
+            "expected": "metadata.name={{dashboard-metrics-scraper}}.spec.template.spec.containers.name={{dashboard-metrics-scraper}}.image should specify the image with a digest",
+            "found": "metadata.name={{dashboard-metrics-scraper}}.spec.template.spec.containers.name={{dashboard-metrics-scraper}}.image does not include an image digest",
+            "fileType": "KUBERNETES"
+          },
+          {
+            "failedPolicies": [],
+            "resourceName": "metadata.name={{kubernetes-dashboard}}.spec.template.spec.containers.name={{kubernetes-dashboard}}.image",
+            "fileName": "EKS/harness/k8s-dashboard/useast1/k8s-dashboard-RO.yaml",
+            "lineNumber": 216,
+            "matchContent": " image: artifactory.harness.com:443/v-docker/kubernetesui/dashboard:v2.2.0",
+            "expected": "metadata.name={{kubernetes-dashboard}}.spec.template.spec.containers.name={{kubernetes-dashboard}}.image should specify the image with a digest",
+            "found": "metadata.name={{kubernetes-dashboard}}.spec.template.spec.containers.name={{kubernetes-dashboard}}.image does not include an image digest",
+            "fileType": "KUBERNETES"
+          }
+        ]
+      },
+      {
+        "rule": {
+          "id": "237f5eb3-338a-4257-9fd5-54d2f9c121ff",
+          "name": "Dashboard Is Enabled"
+        },
+        "severity": "LOW",
+        "failedResourceCount": 2,
+        "failedPolicyMatches": [],
+        "matches": [
+          {
+            "failedPolicies": [],
+            "resourceName": "metadata.name={{dashboard-metrics-scraper}}.spec.template.spec.containers.name={{dashboard-metrics-scraper}}.image",
+            "fileName": "EKS/harness/k8s-dashboard/useast1/k8s-dashboard-RO.yaml",
+            "lineNumber": 302,
+            "matchContent": " image: kubernetesui/metrics-scraper:v1.0.6",
+            "expected": "metadata.name={{dashboard-metrics-scraper}}.spec.template.spec.containers.name={{dashboard-metrics-scraper}}.image has not kubernetes-dashboard deployed",
+            "found": "metadata.name={{dashboard-metrics-scraper}}.spec.template.spec.containers.name={{dashboard-metrics-scraper}}.image has kubernetes-dashboard deployed",
+            "fileType": "KUBERNETES"
+          },
+          {
+            "failedPolicies": [],
+            "resourceName": "metadata.name={{kubernetes-dashboard}}.spec.template.spec.containers.name={{kubernetes-dashboard}}.image",
+            "fileName": "EKS/harness/k8s-dashboard/useast1/k8s-dashboard-RO.yaml",
+            "lineNumber": 216,
+            "matchContent": " image: artifactory.harness.com:443/v-docker/kubernetesui/dashboard:v2.2.0",
+            "expected": "metadata.name={{kubernetes-dashboard}}.spec.template.spec.containers.name={{kubernetes-dashboard}}.image has not kubernetes-dashboard deployed",
+            "found": "metadata.name={{kubernetes-dashboard}}.spec.template.spec.containers.name={{kubernetes-dashboard}}.image has kubernetes-dashboard deployed",
+            "fileType": "KUBERNETES"
+          }
+        ]
+      },
+      {
+        "rule": {
+          "id": "d9040750-cadd-49b2-ad46-68aa6e7592bc",
+          "name": "No Drop Capabilities for Containers"
+        },
+        "severity": "LOW",
+        "failedResourceCount": 2,
+        "failedPolicyMatches": [],
+        "matches": [
+          {
+            "failedPolicies": [],
+            "resourceName": "metadata.name={{dashboard-metrics-scraper}}.spec.containers.name={{dashboard-metrics-scraper}}.securityContext",
+            "fileName": "EKS/harness/k8s-dashboard/useast1/k8s-dashboard-RO.yaml",
+            "lineNumber": 316,
+            "matchContent": " securityContext:",
+            "expected": "metadata.name={{dashboard-metrics-scraper}}.spec.containers.name={{dashboard-metrics-scraper}}.securityContext.capabilities should be set",
+            "found": "metadata.name={{dashboard-metrics-scraper}}.spec.containers.name={{dashboard-metrics-scraper}}.securityContext.capabilities is undefined",
+            "fileType": "KUBERNETES"
+          },
+          {
+            "failedPolicies": [],
+            "resourceName": "metadata.name={{kubernetes-dashboard}}.spec.containers.name={{kubernetes-dashboard}}.securityContext",
+            "fileName": "EKS/harness/k8s-dashboard/useast1/k8s-dashboard-RO.yaml",
+            "lineNumber": 243,
+            "matchContent": " securityContext:",
+            "expected": "metadata.name={{kubernetes-dashboard}}.spec.containers.name={{kubernetes-dashboard}}.securityContext.capabilities should be set",
+            "found": "metadata.name={{kubernetes-dashboard}}.spec.containers.name={{kubernetes-dashboard}}.securityContext.capabilities is undefined",
+            "fileType": "KUBERNETES"
+          }
+        ]
+      },
+      {
+        "rule": {
+          "id": "dc303818-5343-429a-acdb-f4bacdb32297",
+          "name": "Image Pull Policy Of The Container Is Not Set To Always"
+        },
+        "severity": "LOW",
+        "failedResourceCount": 1,
+        "failedPolicyMatches": [],
+        "matches": [
+          {
+            "failedPolicies": [],
+            "resourceName": "metadata.name={{dashboard-metrics-scraper}}.spec.template.spec.containers.name={{dashboard-metrics-scraper}}.imagePullPolicy",
+            "fileName": "EKS/harness/k8s-dashboard/useast1/k8s-dashboard-RO.yaml",
+            "lineNumber": 301,
+            "matchContent": " - name: dashboard-metrics-scraper",
+            "expected": "metadata.name={{dashboard-metrics-scraper}}.spec.template.spec.containers.name={{dashboard-metrics-scraper}}.imagePullPolicy should be set to 'Always'",
+            "found": "metadata.name={{dashboard-metrics-scraper}}.spec.template.spec.containers.name={{dashboard-metrics-scraper}}.imagePullPolicy relies on mutable images in cache",
+            "fileType": "KUBERNETES"
+          }
+        ]
+      },
+      {
+        "rule": {
+          "id": "0ad044a4-442e-4496-8a88-46cf6a95c430",
+          "name": "Missing App Armor Config"
+        },
+        "severity": "LOW",
+        "failedResourceCount": 2,
+        "failedPolicyMatches": [],
+        "matches": [
+          {
+            "failedPolicies": [],
+            "resourceName": "metadata.name={{dashboard-metrics-scraper}}.spec.template.metadata",
+            "fileName": "EKS/harness/k8s-dashboard/useast1/k8s-dashboard-RO.yaml",
+            "lineNumber": 297,
+            "matchContent": " annotations:",
+            "expected": "metadata.name={{dashboard-metrics-scraper}}.spec.template.metadata.annotations should specify an AppArmor profile for container {{dashboard-metrics-scraper}}",
+            "found": "metadata.name={{dashboard-metrics-scraper}}.spec.template.metadata.annotations does not specify an AppArmor profile for container {{dashboard-metrics-scraper}}",
+            "fileType": "KUBERNETES"
+          },
+          {
+            "failedPolicies": [],
+            "resourceName": "metadata.name={{kubernetes-dashboard}}.spec.template.metadata",
+            "fileName": "EKS/harness/k8s-dashboard/useast1/k8s-dashboard-RO.yaml",
+            "lineNumber": 210,
+            "matchContent": " metadata:",
+            "expected": "metadata.name={{kubernetes-dashboard}}.spec.template.metadata.annotations should specify an AppArmor profile for container {{kubernetes-dashboard}}",
+            "found": "metadata.name={{kubernetes-dashboard}}.spec.template.metadata.annotations does not specify an AppArmor profile for container {{kubernetes-dashboard}}",
+            "fileType": "KUBERNETES"
+          }
+        ]
+      },
+      {
+        "rule": {
+          "id": "77d04f54-4d6b-4a2e-b8f3-c4f6f7a5b261",
+          "name": "Service Type is NodePort"
+        },
+        "severity": "LOW",
+        "failedResourceCount": 1,
+        "failedPolicyMatches": [],
+        "matches": [
+          {
+            "failedPolicies": [],
+            "resourceName": "metadata.name={{kubernetes-dashboard}}.spec.type",
+            "fileName": "EKS/harness/k8s-dashboard/useast1/k8s-dashboard-RO.yaml",
+            "lineNumber": 40,
+            "matchContent": " type: NodePort",
+            "expected": "spec.type should not be 'NodePort'",
+            "found": "spec.type is 'NodePort'",
+            "fileType": "KUBERNETES"
+          }
+        ]
+      },
+      {
+        "rule": {
+          "id": "7b5b0ddf-731f-4ad1-b975-6b24f6d07c27",
+          "name": "RBAC Wildcard In Rule"
+        },
+        "severity": "LOW",
+        "failedResourceCount": 3,
+        "failedPolicyMatches": [],
+        "matches": [
+          {
+            "failedPolicies": [],
+            "resourceName": "metadata.name={{kubernetes-dashboard}}.rules",
+            "fileName": "EKS/harness/k8s-dashboard/useast1/k8s-dashboard-RO.yaml",
+            "lineNumber": 142,
+            "matchContent": " resources: [\"*\"]",
+            "expected": "metadata.name={{kubernetes-dashboard}}.rules[1].resources should list the minimal set of needed objects or actions",
+            "found": "metadata.name={{kubernetes-dashboard}}.rules[1].resources uses wildcards to specify objects or actions",
+            "fileType": "KUBERNETES"
+          },
+          {
+            "failedPolicies": [],
+            "resourceName": "metadata.name={{kubernetes-dashboard}}.rules",
+            "fileName": "EKS/harness/k8s-dashboard/useast1/k8s-dashboard-RO.yaml",
+            "lineNumber": 149,
+            "matchContent": " resources: [\"*\"]",
+            "expected": "metadata.name={{kubernetes-dashboard}}.rules[2].resources should list the minimal set of needed objects or actions",
+            "found": "metadata.name={{kubernetes-dashboard}}.rules[2].resources uses wildcards to specify objects or actions",
+            "fileType": "KUBERNETES"
+          },
+          {
+            "failedPolicies": [],
+            "resourceName": "metadata.name={{kubernetes-dashboard}}.rules",
+            "fileName": "EKS/harness/k8s-dashboard/useast1/k8s-dashboard-RO.yaml",
+            "lineNumber": 156,
+            "matchContent": " resources: [\"*\"]",
+            "expected": "metadata.name={{kubernetes-dashboard}}.rules[3].resources should list the minimal set of needed objects or actions",
+            "found": "metadata.name={{kubernetes-dashboard}}.rules[3].resources uses wildcards to specify objects or actions",
+            "fileType": "KUBERNETES"
+          }
+        ]
+      },
+      {
+        "rule": {
+          "id": "82710f3c-658f-4beb-a6ef-ca42818d66a9",
+          "name": "Pod or Container Without LimitRange"
+        },
+        "severity": "LOW",
+        "failedResourceCount": 2,
+        "failedPolicyMatches": [],
+        "matches": [
+          {
+            "failedPolicies": [],
+            "resourceName": "metadata.name={{dashboard-metrics-scraper}}",
+            "fileName": "EKS/harness/k8s-dashboard/useast1/k8s-dashboard-RO.yaml",
+            "lineNumber": 286,
+            "matchContent": " namespace: kubernetes-dashboard",
+            "expected": "metadata.name={{dashboard-metrics-scraper}} has a 'LimitRange' policy associated",
+            "found": "metadata.name={{dashboard-metrics-scraper}} does not have a 'LimitRange' policy associated",
+            "fileType": "KUBERNETES"
+          },
+          {
+            "failedPolicies": [],
+            "resourceName": "metadata.name={{kubernetes-dashboard}}",
+            "fileName": "EKS/harness/k8s-dashboard/useast1/k8s-dashboard-RO.yaml",
+            "lineNumber": 202,
+            "matchContent": " namespace: kubernetes-dashboard",
+            "expected": "metadata.name={{kubernetes-dashboard}} has a 'LimitRange' policy associated",
+            "found": "metadata.name={{kubernetes-dashboard}} does not have a 'LimitRange' policy associated",
+            "fileType": "KUBERNETES"
+          }
+        ]
+      },
+      {
+        "rule": {
+          "id": "fb41f66e-69ea-45dd-8a0f-1d507f0f7083",
+          "name": "Pod or Container Without ResourceQuota"
+        },
+        "severity": "LOW",
+        "failedResourceCount": 2,
+        "failedPolicyMatches": [],
+        "matches": [
+          {
+            "failedPolicies": [],
+            "resourceName": "metadata.name={{dashboard-metrics-scraper}}",
+            "fileName": "EKS/harness/k8s-dashboard/useast1/k8s-dashboard-RO.yaml",
+            "lineNumber": 286,
+            "matchContent": " namespace: kubernetes-dashboard",
+            "expected": "metadata.name={{dashboard-metrics-scraper}} has a 'ResourceQuota' policy associated",
+            "found": "metadata.name={{dashboard-metrics-scraper}} does not have a 'ResourceQuota' policy associated",
+            "fileType": "KUBERNETES"
+          },
+          {
+            "failedPolicies": [],
+            "resourceName": "metadata.name={{kubernetes-dashboard}}",
+            "fileName": "EKS/harness/k8s-dashboard/useast1/k8s-dashboard-RO.yaml",
+            "lineNumber": 202,
+            "matchContent": " namespace: kubernetes-dashboard",
+            "expected": "metadata.name={{kubernetes-dashboard}} has a 'ResourceQuota' policy associated",
+            "found": "metadata.name={{kubernetes-dashboard}} does not have a 'ResourceQuota' policy associated",
+            "fileType": "KUBERNETES"
+          }
+        ]
+      },
+      {
+        "rule": {
+          "id": "3e7825e5-2aef-4093-9ab3-5fb246740572",
+          "name": "CPU Requests Not Set"
+        },
+        "severity": "MEDIUM",
+        "failedResourceCount": 2,
+        "failedPolicyMatches": [
+          {
+            "policy": {
+              "id": "a9fa7aad-923b-4c30-b52d-605a50731303",
+              "name": "StgPrdIacPolicy",
+              "description": null,
+              "type": "IAC",
+              "builtin": false,
+              "projects": null,
+              "policyLifecycleEnforcements": null,
+              "params": {
+                "__typename": "cicdscanpolicyparamsiac",
+                "severityThreshold": "MEDIUM",
+                "countThreshold": 1,
+                "ignoredRules": null,
+                "validatableIgnoredRules": null,
+                "builtinIgnoreTagsEnabled": false,
+                "customIgnoreTags": null,
+                "securityFrameworks": null
+              }
+            }
+          }
+        ],
+        "matches": [
+          {
+            "failedPolicies": [
+              {
+                "policy": {
+                  "id": "a9fa7aad-923b-4c30-b52d-605a50731303",
+                  "name": "StgPrdIacPolicy",
+                  "description": null,
+                  "type": "IAC",
+                  "builtin": false,
+                  "projects": null,
+                  "policyLifecycleEnforcements": null,
+                  "params": {
+                    "__typename": "cicdscanpolicyparamsiac",
+                    "severityThreshold": "MEDIUM",
+                    "countThreshold": 1,
+                    "ignoredRules": null,
+                    "validatableIgnoredRules": null,
+                    "builtinIgnoreTagsEnabled": false,
+                    "customIgnoreTags": null,
+                    "securityFrameworks": null
+                  }
+                }
+              }
+            ],
+            "resourceName": "metadata.name={{kubernetes-dashboard}}.spec.template.spec.containers.name=kubernetes-dashboard",
+            "fileName": "EKS/harness/k8s-dashboard/useast1/k8s-dashboard-RO.yaml",
+            "lineNumber": 215,
+            "matchContent": " - name: kubernetes-dashboard",
+            "expected": "spec.template.spec.containers.name=kubernetes-dashboard should have resources defined",
+            "found": "spec.template.spec.containers.name=kubernetes-dashboard doesn't have resources defined",
+            "fileType": "KUBERNETES"
+          },
+          {
+            "failedPolicies": [
+              {
+                "policy": {
+                  "id": "a9fa7aad-923b-4c30-b52d-605a50731303",
+                  "name": "StgPrdIacPolicy",
+                  "description": null,
+                  "type": "IAC",
+                  "builtin": false,
+                  "projects": null,
+                  "policyLifecycleEnforcements": null,
+                  "params": {
+                    "__typename": "cicdscanpolicyparamsiac",
+                    "severityThreshold": "MEDIUM",
+                    "countThreshold": 1,
+                    "ignoredRules": null,
+                    "validatableIgnoredRules": null,
+                    "builtinIgnoreTagsEnabled": false,
+                    "customIgnoreTags": null,
+                    "securityFrameworks": null
+                  }
+                }
+              }
+            ],
+            "resourceName": "metadata.name={{dashboard-metrics-scraper}}.spec.template.spec.containers.name=dashboard-metrics-scraper",
+            "fileName": "EKS/harness/k8s-dashboard/useast1/k8s-dashboard-RO.yaml",
+            "lineNumber": 301,
+            "matchContent": " - name: dashboard-metrics-scraper",
+            "expected": "spec.template.spec.containers.name=dashboard-metrics-scraper should have resources defined",
+            "found": "spec.template.spec.containers.name=dashboard-metrics-scraper doesn't have resources defined",
+            "fileType": "KUBERNETES"
+          }
+        ]
+      },
+      {
+        "rule": {
+          "id": "2aee5ec0-391e-45f1-bee7-34d256fbdee7",
+          "name": "Seccomp Profile Is Not Configured"
+        },
+        "severity": "MEDIUM",
+        "failedResourceCount": 2,
+        "failedPolicyMatches": [
+          {
+            "policy": {
+              "id": "a9fa7aad-923b-4c30-b52d-605a50731303",
+              "name": "StgPrdIacPolicy",
+              "description": null,
+              "type": "IAC",
+              "builtin": false,
+              "projects": null,
+              "policyLifecycleEnforcements": null,
+              "params": {
+                "__typename": "cicdscanpolicyparamsiac",
+                "severityThreshold": "MEDIUM",
+                "countThreshold": 1,
+                "ignoredRules": null,
+                "validatableIgnoredRules": null,
+                "builtinIgnoreTagsEnabled": false,
+                "customIgnoreTags": null,
+                "securityFrameworks": null
+              }
+            }
+          }
+        ],
+        "matches": [
+          {
+            "failedPolicies": [
+              {
+                "policy": {
+                  "id": "a9fa7aad-923b-4c30-b52d-605a50731303",
+                  "name": "StgPrdIacPolicy",
+                  "description": null,
+                  "type": "IAC",
+                  "builtin": false,
+                  "projects": null,
+                  "policyLifecycleEnforcements": null,
+                  "params": {
+                    "__typename": "cicdscanpolicyparamsiac",
+                    "severityThreshold": "MEDIUM",
+                    "countThreshold": 1,
+                    "ignoredRules": null,
+                    "validatableIgnoredRules": null,
+                    "builtinIgnoreTagsEnabled": false,
+                    "customIgnoreTags": null,
+                    "securityFrameworks": null
+                  }
+                }
+              }
+            ],
+            "resourceName": "metadata.name={{dashboard-metrics-scraper}}.spec.template.spec.containers.name={{dashboard-metrics-scraper}}.securityContext",
+            "fileName": "EKS/harness/k8s-dashboard/useast1/k8s-dashboard-RO.yaml",
+            "lineNumber": 316,
+            "matchContent": " securityContext:",
+            "expected": "metadata.name={{dashboard-metrics-scraper}}.spec.template.spec.containers.name={{dashboard-metrics-scraper}}.securityContext.seccompProfile.type should be defined",
+            "found": "metadata.name={{dashboard-metrics-scraper}}.spec.template.spec.containers.name={{dashboard-metrics-scraper}}.securityContext.seccompProfile.type is undefined",
+            "fileType": "KUBERNETES"
+          },
+          {
+            "failedPolicies": [
+              {
+                "policy": {
+                  "id": "a9fa7aad-923b-4c30-b52d-605a50731303",
+                  "name": "StgPrdIacPolicy",
+                  "description": null,
+                  "type": "IAC",
+                  "builtin": false,
+                  "projects": null,
+                  "policyLifecycleEnforcements": null,
+                  "params": {
+                    "__typename": "cicdscanpolicyparamsiac",
+                    "severityThreshold": "MEDIUM",
+                    "countThreshold": 1,
+                    "ignoredRules": null,
+                    "validatableIgnoredRules": null,
+                    "builtinIgnoreTagsEnabled": false,
+                    "customIgnoreTags": null,
+                    "securityFrameworks": null
+                  }
+                }
+              }
+            ],
+            "resourceName": "metadata.name={{kubernetes-dashboard}}.spec.template.spec.containers.name={{kubernetes-dashboard}}.securityContext",
+            "fileName": "EKS/harness/k8s-dashboard/useast1/k8s-dashboard-RO.yaml",
+            "lineNumber": 243,
+            "matchContent": " securityContext:",
+            "expected": "metadata.name={{kubernetes-dashboard}}.spec.template.spec.containers.name={{kubernetes-dashboard}}.securityContext.seccompProfile.type should be defined",
+            "found": "metadata.name={{kubernetes-dashboard}}.spec.template.spec.containers.name={{kubernetes-dashboard}}.securityContext.seccompProfile.type is undefined",
+            "fileType": "KUBERNETES"
+          }
+        ]
+      },
+      {
+        "rule": {
+          "id": "cff17482-9506-4f54-a822-df3ad919e51b",
+          "name": "Service Account Token Automount Not Disabled"
+        },
+        "severity": "MEDIUM",
+        "failedResourceCount": 2,
+        "failedPolicyMatches": [
+          {
+            "policy": {
+              "id": "a9fa7aad-923b-4c30-b52d-605a50731303",
+              "name": "StgPrdIacPolicy",
+              "description": null,
+              "type": "IAC",
+              "builtin": false,
+              "projects": null,
+              "policyLifecycleEnforcements": null,
+              "params": {
+                "__typename": "cicdscanpolicyparamsiac",
+                "severityThreshold": "MEDIUM",
+                "countThreshold": 1,
+                "ignoredRules": null,
+                "validatableIgnoredRules": null,
+                "builtinIgnoreTagsEnabled": false,
+                "customIgnoreTags": null,
+                "securityFrameworks": null
+              }
+            }
+          }
+        ],
+        "matches": [
+          {
+            "failedPolicies": [
+              {
+                "policy": {
+                  "id": "a9fa7aad-923b-4c30-b52d-605a50731303",
+                  "name": "StgPrdIacPolicy",
+                  "description": null,
+                  "type": "IAC",
+                  "builtin": false,
+                  "projects": null,
+                  "policyLifecycleEnforcements": null,
+                  "params": {
+                    "__typename": "cicdscanpolicyparamsiac",
+                    "severityThreshold": "MEDIUM",
+                    "countThreshold": 1,
+                    "ignoredRules": null,
+                    "validatableIgnoredRules": null,
+                    "builtinIgnoreTagsEnabled": false,
+                    "customIgnoreTags": null,
+                    "securityFrameworks": null
+                  }
+                }
+              }
+            ],
+            "resourceName": "metadata.name={{dashboard-metrics-scraper}}.spec.template.spec",
+            "fileName": "EKS/harness/k8s-dashboard/useast1/k8s-dashboard-RO.yaml",
+            "lineNumber": 299,
+            "matchContent": " spec:",
+            "expected": "metadata.name={{dashboard-metrics-scraper}}.spec.template.spec.automountServiceAccountToken should be defined and set to false",
+            "found": "metadata.name={{dashboard-metrics-scraper}}.spec.template.spec.automountServiceAccountToken is undefined",
+            "fileType": "KUBERNETES"
+          },
+          {
+            "failedPolicies": [
+              {
+                "policy": {
+                  "id": "a9fa7aad-923b-4c30-b52d-605a50731303",
+                  "name": "StgPrdIacPolicy",
+                  "description": null,
+                  "type": "IAC",
+                  "builtin": false,
+                  "projects": null,
+                  "policyLifecycleEnforcements": null,
+                  "params": {
+                    "__typename": "cicdscanpolicyparamsiac",
+                    "severityThreshold": "MEDIUM",
+                    "countThreshold": 1,
+                    "ignoredRules": null,
+                    "validatableIgnoredRules": null,
+                    "builtinIgnoreTagsEnabled": false,
+                    "customIgnoreTags": null,
+                    "securityFrameworks": null
+                  }
+                }
+              }
+            ],
+            "resourceName": "metadata.name={{kubernetes-dashboard}}.spec.template.spec",
+            "fileName": "EKS/harness/k8s-dashboard/useast1/k8s-dashboard-RO.yaml",
+            "lineNumber": 213,
+            "matchContent": " spec:",
+            "expected": "metadata.name={{kubernetes-dashboard}}.spec.template.spec.automountServiceAccountToken should be defined and set to false",
+            "found": "metadata.name={{kubernetes-dashboard}}.spec.template.spec.automountServiceAccountToken is undefined",
+            "fileType": "KUBERNETES"
+          }
+        ]
+      },
+      {
+        "rule": {
+          "id": "1908dcc4-d04f-4c80-b233-2854a8b8c9cd",
+          "name": "Memory Requests Not Defined"
+        },
+        "severity": "MEDIUM",
+        "failedResourceCount": 2,
+        "failedPolicyMatches": [
+          {
+            "policy": {
+              "id": "a9fa7aad-923b-4c30-b52d-605a50731303",
+              "name": "StgPrdIacPolicy",
+              "description": null,
+              "type": "IAC",
+              "builtin": false,
+              "projects": null,
+              "policyLifecycleEnforcements": null,
+              "params": {
+                "__typename": "cicdscanpolicyparamsiac",
+                "severityThreshold": "MEDIUM",
+                "countThreshold": 1,
+                "ignoredRules": null,
+                "validatableIgnoredRules": null,
+                "builtinIgnoreTagsEnabled": false,
+                "customIgnoreTags": null,
+                "securityFrameworks": null
+              }
+            }
+          }
+        ],
+        "matches": [
+          {
+            "failedPolicies": [
+              {
+                "policy": {
+                  "id": "a9fa7aad-923b-4c30-b52d-605a50731303",
+                  "name": "StgPrdIacPolicy",
+                  "description": null,
+                  "type": "IAC",
+                  "builtin": false,
+                  "projects": null,
+                  "policyLifecycleEnforcements": null,
+                  "params": {
+                    "__typename": "cicdscanpolicyparamsiac",
+                    "severityThreshold": "MEDIUM",
+                    "countThreshold": 1,
+                    "ignoredRules": null,
+                    "validatableIgnoredRules": null,
+                    "builtinIgnoreTagsEnabled": false,
+                    "customIgnoreTags": null,
+                    "securityFrameworks": null
+                  }
+                }
+              }
+            ],
+            "resourceName": "metadata.name={{dashboard-metrics-scraper}}.spec.template.spec.containers.name={{dashboard-metrics-scraper}}",
+            "fileName": "EKS/harness/k8s-dashboard/useast1/k8s-dashboard-RO.yaml",
+            "lineNumber": 301,
+            "matchContent": " - name: dashboard-metrics-scraper",
+            "expected": "metadata.name={{dashboard-metrics-scraper}}.spec.template.spec.containers.name={{dashboard-metrics-scraper}}.resources.requests.memory should be defined",
+            "found": "metadata.name={{dashboard-metrics-scraper}}.spec.template.spec.containers.name={{dashboard-metrics-scraper}}.resources.requests.memory is undefined",
+            "fileType": "KUBERNETES"
+          },
+          {
+            "failedPolicies": [
+              {
+                "policy": {
+                  "id": "a9fa7aad-923b-4c30-b52d-605a50731303",
+                  "name": "StgPrdIacPolicy",
+                  "description": null,
+                  "type": "IAC",
+                  "builtin": false,
+                  "projects": null,
+                  "policyLifecycleEnforcements": null,
+                  "params": {
+                    "__typename": "cicdscanpolicyparamsiac",
+                    "severityThreshold": "MEDIUM",
+                    "countThreshold": 1,
+                    "ignoredRules": null,
+                    "validatableIgnoredRules": null,
+                    "builtinIgnoreTagsEnabled": false,
+                    "customIgnoreTags": null,
+                    "securityFrameworks": null
+                  }
+                }
+              }
+            ],
+            "resourceName": "metadata.name={{kubernetes-dashboard}}.spec.template.spec.containers.name={{kubernetes-dashboard}}",
+            "fileName": "EKS/harness/k8s-dashboard/useast1/k8s-dashboard-RO.yaml",
+            "lineNumber": 215,
+            "matchContent": " - name: kubernetes-dashboard",
+            "expected": "metadata.name={{kubernetes-dashboard}}.spec.template.spec.containers.name={{kubernetes-dashboard}}.resources.requests.memory should be defined",
+            "found": "metadata.name={{kubernetes-dashboard}}.spec.template.spec.containers.name={{kubernetes-dashboard}}.resources.requests.memory is undefined",
+            "fileType": "KUBERNETES"
+          }
+        ]
+      },
+      {
+        "rule": {
+          "id": "75f3eaa1-6307-4cb5-b8de-7c4ec3491e64",
+          "name": "RBAC Roles with Read Secrets Permissions"
+        },
+        "severity": "MEDIUM",
+        "failedResourceCount": 1,
+        "failedPolicyMatches": [
+          {
+            "policy": {
+              "id": "a9fa7aad-923b-4c30-b52d-605a50731303",
+              "name": "StgPrdIacPolicy",
+              "description": null,
+              "type": "IAC",
+              "builtin": false,
+              "projects": null,
+              "policyLifecycleEnforcements": null,
+              "params": {
+                "__typename": "cicdscanpolicyparamsiac",
+                "severityThreshold": "MEDIUM",
+                "countThreshold": 1,
+                "ignoredRules": null,
+                "validatableIgnoredRules": null,
+                "builtinIgnoreTagsEnabled": false,
+                "customIgnoreTags": null,
+                "securityFrameworks": null
+              }
+            }
+          }
+        ],
+        "matches": [
+          {
+            "failedPolicies": [
+              {
+                "policy": {
+                  "id": "a9fa7aad-923b-4c30-b52d-605a50731303",
+                  "name": "StgPrdIacPolicy",
+                  "description": null,
+                  "type": "IAC",
+                  "builtin": false,
+                  "projects": null,
+                  "policyLifecycleEnforcements": null,
+                  "params": {
+                    "__typename": "cicdscanpolicyparamsiac",
+                    "severityThreshold": "MEDIUM",
+                    "countThreshold": 1,
+                    "ignoredRules": null,
+                    "validatableIgnoredRules": null,
+                    "builtinIgnoreTagsEnabled": false,
+                    "customIgnoreTags": null,
+                    "securityFrameworks": null
+                  }
+                }
+              }
+            ],
+            "resourceName": "metadata.name={{kubernetes-dashboard}}.rules",
+            "fileName": "EKS/harness/k8s-dashboard/useast1/k8s-dashboard-RO.yaml",
+            "lineNumber": 108,
+            "matchContent": " verbs: [\"get\", \"update\", \"delete\"]",
+            "expected": "metadata.name={{kubernetes-dashboard}}.rules[0] should not be granted read access to Secrets objects",
+            "found": "metadata.name={{kubernetes-dashboard}}.rules[0] is granted read access (verbs: get, update, delete) to Secrets objects",
+            "fileType": "KUBERNETES"
+          }
+        ]
+      },
+      {
+        "rule": {
+          "id": "f779c444-9e07-43c9-a2d7-abcdcf00f617",
+          "name": "Memory Limits Not Defined"
+        },
+        "severity": "MEDIUM",
+        "failedResourceCount": 2,
+        "failedPolicyMatches": [
+          {
+            "policy": {
+              "id": "a9fa7aad-923b-4c30-b52d-605a50731303",
+              "name": "StgPrdIacPolicy",
+              "description": null,
+              "type": "IAC",
+              "builtin": false,
+              "projects": null,
+              "policyLifecycleEnforcements": null,
+              "params": {
+                "__typename": "cicdscanpolicyparamsiac",
+                "severityThreshold": "MEDIUM",
+                "countThreshold": 1,
+                "ignoredRules": null,
+                "validatableIgnoredRules": null,
+                "builtinIgnoreTagsEnabled": false,
+                "customIgnoreTags": null,
+                "securityFrameworks": null
+              }
+            }
+          }
+        ],
+        "matches": [
+          {
+            "failedPolicies": [
+              {
+                "policy": {
+                  "id": "a9fa7aad-923b-4c30-b52d-605a50731303",
+                  "name": "StgPrdIacPolicy",
+                  "description": null,
+                  "type": "IAC",
+                  "builtin": false,
+                  "projects": null,
+                  "policyLifecycleEnforcements": null,
+                  "params": {
+                    "__typename": "cicdscanpolicyparamsiac",
+                    "severityThreshold": "MEDIUM",
+                    "countThreshold": 1,
+                    "ignoredRules": null,
+                    "validatableIgnoredRules": null,
+                    "builtinIgnoreTagsEnabled": false,
+                    "customIgnoreTags": null,
+                    "securityFrameworks": null
+                  }
+                }
+              }
+            ],
+            "resourceName": "metadata.name={{dashboard-metrics-scraper}}.spec.template.spec.containers.name={{dashboard-metrics-scraper}}",
+            "fileName": "EKS/harness/k8s-dashboard/useast1/k8s-dashboard-RO.yaml",
+            "lineNumber": 301,
+            "matchContent": " - name: dashboard-metrics-scraper",
+            "expected": "metadata.name={{dashboard-metrics-scraper}}.spec.template.spec.containers.name={{dashboard-metrics-scraper}}.resources.limits.memory should be defined",
+            "found": "metadata.name={{dashboard-metrics-scraper}}.spec.template.spec.containers.name={{dashboard-metrics-scraper}}.resources.limits.memory is undefined",
+            "fileType": "KUBERNETES"
+          },
+          {
+            "failedPolicies": [
+              {
+                "policy": {
+                  "id": "a9fa7aad-923b-4c30-b52d-605a50731303",
+                  "name": "StgPrdIacPolicy",
+                  "description": null,
+                  "type": "IAC",
+                  "builtin": false,
+                  "projects": null,
+                  "policyLifecycleEnforcements": null,
+                  "params": {
+                    "__typename": "cicdscanpolicyparamsiac",
+                    "severityThreshold": "MEDIUM",
+                    "countThreshold": 1,
+                    "ignoredRules": null,
+                    "validatableIgnoredRules": null,
+                    "builtinIgnoreTagsEnabled": false,
+                    "customIgnoreTags": null,
+                    "securityFrameworks": null
+                  }
+                }
+              }
+            ],
+            "resourceName": "metadata.name={{kubernetes-dashboard}}.spec.template.spec.containers.name={{kubernetes-dashboard}}",
+            "fileName": "EKS/harness/k8s-dashboard/useast1/k8s-dashboard-RO.yaml",
+            "lineNumber": 215,
+            "matchContent": " - name: kubernetes-dashboard",
+            "expected": "metadata.name={{kubernetes-dashboard}}.spec.template.spec.containers.name={{kubernetes-dashboard}}.resources.limits.memory should be defined",
+            "found": "metadata.name={{kubernetes-dashboard}}.spec.template.spec.containers.name={{kubernetes-dashboard}}.resources.limits.memory is undefined",
+            "fileType": "KUBERNETES"
+          }
+        ]
+      },
+      {
+        "rule": {
+          "id": "6bc87dff-1a12-4940-be05-f22516e32129",
+          "name": "Shared Service Account"
+        },
+        "severity": "MEDIUM",
+        "failedResourceCount": 2,
+        "failedPolicyMatches": [
+          {
+            "policy": {
+              "id": "a9fa7aad-923b-4c30-b52d-605a50731303",
+              "name": "StgPrdIacPolicy",
+              "description": null,
+              "type": "IAC",
+              "builtin": false,
+              "projects": null,
+              "policyLifecycleEnforcements": null,
+              "params": {
+                "__typename": "cicdscanpolicyparamsiac",
+                "severityThreshold": "MEDIUM",
+                "countThreshold": 1,
+                "ignoredRules": null,
+                "validatableIgnoredRules": null,
+                "builtinIgnoreTagsEnabled": false,
+                "customIgnoreTags": null,
+                "securityFrameworks": null
+              }
+            }
+          }
+        ],
+        "matches": [
+          {
+            "failedPolicies": [
+              {
+                "policy": {
+                  "id": "a9fa7aad-923b-4c30-b52d-605a50731303",
+                  "name": "StgPrdIacPolicy",
+                  "description": null,
+                  "type": "IAC",
+                  "builtin": false,
+                  "projects": null,
+                  "policyLifecycleEnforcements": null,
+                  "params": {
+                    "__typename": "cicdscanpolicyparamsiac",
+                    "severityThreshold": "MEDIUM",
+                    "countThreshold": 1,
+                    "ignoredRules": null,
+                    "validatableIgnoredRules": null,
+                    "builtinIgnoreTagsEnabled": false,
+                    "customIgnoreTags": null,
+                    "securityFrameworks": null
+                  }
+                }
+              }
+            ],
+            "resourceName": "metadata.name={{kubernetes-dashboard}}.spec.template.spec.serviceAccountName",
+            "fileName": "EKS/harness/k8s-dashboard/useast1/k8s-dashboard-RO.yaml",
+            "lineNumber": 254,
+            "matchContent": " serviceAccountName: kubernetes-dashboard",
+            "expected": "'spec.template.spec.serviceAccountName' should not be shared with other workloads",
+            "found": "'spec.template.spec.serviceAccountName' is shared with other workloads",
+            "fileType": "KUBERNETES"
+          },
+          {
+            "failedPolicies": [
+              {
+                "policy": {
+                  "id": "a9fa7aad-923b-4c30-b52d-605a50731303",
+                  "name": "StgPrdIacPolicy",
+                  "description": null,
+                  "type": "IAC",
+                  "builtin": false,
+                  "projects": null,
+                  "policyLifecycleEnforcements": null,
+                  "params": {
+                    "__typename": "cicdscanpolicyparamsiac",
+                    "severityThreshold": "MEDIUM",
+                    "countThreshold": 1,
+                    "ignoredRules": null,
+                    "validatableIgnoredRules": null,
+                    "builtinIgnoreTagsEnabled": false,
+                    "customIgnoreTags": null,
+                    "securityFrameworks": null
+                  }
+                }
+              }
+            ],
+            "resourceName": "metadata.name={{dashboard-metrics-scraper}}.spec.template.spec.serviceAccountName",
+            "fileName": "EKS/harness/k8s-dashboard/useast1/k8s-dashboard-RO.yaml",
+            "lineNumber": 321,
+            "matchContent": " serviceAccountName: kubernetes-dashboard",
+            "expected": "'spec.template.spec.serviceAccountName' should not be shared with other workloads",
+            "found": "'spec.template.spec.serviceAccountName' is shared with other workloads",
+            "fileType": "KUBERNETES"
+          }
+        ]
+      },
+      {
+        "rule": {
+          "id": "d50afc36-2eb0-4ff5-b248-f8b6685d4688",
+          "name": "ServiceAccount Allows Access Secrets"
+        },
+        "severity": "MEDIUM",
+        "failedResourceCount": 1,
+        "failedPolicyMatches": [
+          {
+            "policy": {
+              "id": "a9fa7aad-923b-4c30-b52d-605a50731303",
+              "name": "StgPrdIacPolicy",
+              "description": null,
+              "type": "IAC",
+              "builtin": false,
+              "projects": null,
+              "policyLifecycleEnforcements": null,
+              "params": {
+                "__typename": "cicdscanpolicyparamsiac",
+                "severityThreshold": "MEDIUM",
+                "countThreshold": 1,
+                "ignoredRules": null,
+                "validatableIgnoredRules": null,
+                "builtinIgnoreTagsEnabled": false,
+                "customIgnoreTags": null,
+                "securityFrameworks": null
+              }
+            }
+          }
+        ],
+        "matches": [
+          {
+            "failedPolicies": [
+              {
+                "policy": {
+                  "id": "a9fa7aad-923b-4c30-b52d-605a50731303",
+                  "name": "StgPrdIacPolicy",
+                  "description": null,
+                  "type": "IAC",
+                  "builtin": false,
+                  "projects": null,
+                  "policyLifecycleEnforcements": null,
+                  "params": {
+                    "__typename": "cicdscanpolicyparamsiac",
+                    "severityThreshold": "MEDIUM",
+                    "countThreshold": 1,
+                    "ignoredRules": null,
+                    "validatableIgnoredRules": null,
+                    "builtinIgnoreTagsEnabled": false,
+                    "customIgnoreTags": null,
+                    "securityFrameworks": null
+                  }
+                }
+              }
+            ],
+            "resourceName": "metadata.name={{kubernetes-dashboard}}.rules",
+            "fileName": "EKS/harness/k8s-dashboard/useast1/k8s-dashboard-RO.yaml",
+            "lineNumber": 108,
+            "matchContent": " verbs: [\"get\", \"update\", \"delete\"]",
+            "expected": "The metadata.name={{kubernetes-dashboard}}.rules.verbs should not contain the following verbs: [[\"get\", \"update\", \"delete\"]]",
+            "found": "The metadata.name={{kubernetes-dashboard}}.rules.verbs contain the following verbs: [[\"get\", \"update\", \"delete\"]]",
+            "fileType": "KUBERNETES"
+          }
+        ]
+      },
+      {
+        "rule": {
+          "id": "acf82b07-869a-44e5-86bd-ecb83d2b9666",
+          "name": "Readiness Probe Is Not Configured"
+        },
+        "severity": "MEDIUM",
+        "failedResourceCount": 2,
+        "failedPolicyMatches": [
+          {
+            "policy": {
+              "id": "a9fa7aad-923b-4c30-b52d-605a50731303",
+              "name": "StgPrdIacPolicy",
+              "description": null,
+              "type": "IAC",
+              "builtin": false,
+              "projects": null,
+              "policyLifecycleEnforcements": null,
+              "params": {
+                "__typename": "cicdscanpolicyparamsiac",
+                "severityThreshold": "MEDIUM",
+                "countThreshold": 1,
+                "ignoredRules": null,
+                "validatableIgnoredRules": null,
+                "builtinIgnoreTagsEnabled": false,
+                "customIgnoreTags": null,
+                "securityFrameworks": null
+              }
+            }
+          }
+        ],
+        "matches": [
+          {
+            "failedPolicies": [
+              {
+                "policy": {
+                  "id": "a9fa7aad-923b-4c30-b52d-605a50731303",
+                  "name": "StgPrdIacPolicy",
+                  "description": null,
+                  "type": "IAC",
+                  "builtin": false,
+                  "projects": null,
+                  "policyLifecycleEnforcements": null,
+                  "params": {
+                    "__typename": "cicdscanpolicyparamsiac",
+                    "severityThreshold": "MEDIUM",
+                    "countThreshold": 1,
+                    "ignoredRules": null,
+                    "validatableIgnoredRules": null,
+                    "builtinIgnoreTagsEnabled": false,
+                    "customIgnoreTags": null,
+                    "securityFrameworks": null
+                  }
+                }
+              }
+            ],
+            "resourceName": "metadata.name={{dashboard-metrics-scraper}}.spec.template.spec.containers.name={{dashboard-metrics-scraper}}",
+            "fileName": "EKS/harness/k8s-dashboard/useast1/k8s-dashboard-RO.yaml",
+            "lineNumber": 301,
+            "matchContent": " - name: dashboard-metrics-scraper",
+            "expected": "metadata.name={{dashboard-metrics-scraper}}.spec.template.spec.containers.name={{dashboard-metrics-scraper}}.readinessProbe should be defined",
+            "found": "metadata.name={{dashboard-metrics-scraper}}.spec.template.spec.containers.name={{dashboard-metrics-scraper}}.readinessProbe is undefined",
+            "fileType": "KUBERNETES"
+          },
+          {
+            "failedPolicies": [
+              {
+                "policy": {
+                  "id": "a9fa7aad-923b-4c30-b52d-605a50731303",
+                  "name": "StgPrdIacPolicy",
+                  "description": null,
+                  "type": "IAC",
+                  "builtin": false,
+                  "projects": null,
+                  "policyLifecycleEnforcements": null,
+                  "params": {
+                    "__typename": "cicdscanpolicyparamsiac",
+                    "severityThreshold": "MEDIUM",
+                    "countThreshold": 1,
+                    "ignoredRules": null,
+                    "validatableIgnoredRules": null,
+                    "builtinIgnoreTagsEnabled": false,
+                    "customIgnoreTags": null,
+                    "securityFrameworks": null
+                  }
+                }
+              }
+            ],
+            "resourceName": "metadata.name={{kubernetes-dashboard}}.spec.template.spec.containers.name={{kubernetes-dashboard}}",
+            "fileName": "EKS/harness/k8s-dashboard/useast1/k8s-dashboard-RO.yaml",
+            "lineNumber": 215,
+            "matchContent": " - name: kubernetes-dashboard",
+            "expected": "metadata.name={{kubernetes-dashboard}}.spec.template.spec.containers.name={{kubernetes-dashboard}}.readinessProbe should be defined",
+            "found": "metadata.name={{kubernetes-dashboard}}.spec.template.spec.containers.name={{kubernetes-dashboard}}.readinessProbe is undefined",
+            "fileType": "KUBERNETES"
+          }
+        ]
+      },
+      {
+        "rule": {
+          "id": "5f1b40d5-8165-43df-a7fb-7da68cfb3a1c",
+          "name": "CPU Limits Not Set"
+        },
+        "severity": "MEDIUM",
+        "failedResourceCount": 2,
+        "failedPolicyMatches": [
+          {
+            "policy": {
+              "id": "a9fa7aad-923b-4c30-b52d-605a50731303",
+              "name": "StgPrdIacPolicy",
+              "description": null,
+              "type": "IAC",
+              "builtin": false,
+              "projects": null,
+              "policyLifecycleEnforcements": null,
+              "params": {
+                "__typename": "cicdscanpolicyparamsiac",
+                "severityThreshold": "MEDIUM",
+                "countThreshold": 1,
+                "ignoredRules": null,
+                "validatableIgnoredRules": null,
+                "builtinIgnoreTagsEnabled": false,
+                "customIgnoreTags": null,
+                "securityFrameworks": null
+              }
+            }
+          }
+        ],
+        "matches": [
+          {
+            "failedPolicies": [
+              {
+                "policy": {
+                  "id": "a9fa7aad-923b-4c30-b52d-605a50731303",
+                  "name": "StgPrdIacPolicy",
+                  "description": null,
+                  "type": "IAC",
+                  "builtin": false,
+                  "projects": null,
+                  "policyLifecycleEnforcements": null,
+                  "params": {
+                    "__typename": "cicdscanpolicyparamsiac",
+                    "severityThreshold": "MEDIUM",
+                    "countThreshold": 1,
+                    "ignoredRules": null,
+                    "validatableIgnoredRules": null,
+                    "builtinIgnoreTagsEnabled": false,
+                    "customIgnoreTags": null,
+                    "securityFrameworks": null
+                  }
+                }
+              }
+            ],
+            "resourceName": "metadata.name={{dashboard-metrics-scraper}}.spec.template.spec.containers.name=dashboard-metrics-scraper",
+            "fileName": "EKS/harness/k8s-dashboard/useast1/k8s-dashboard-RO.yaml",
+            "lineNumber": 301,
+            "matchContent": " - name: dashboard-metrics-scraper",
+            "expected": "spec.template.spec.containers.name=dashboard-metrics-scraper has resources defined",
+            "found": "spec.template.spec.containers.name=dashboard-metrics-scraper doesn't have resources defined",
+            "fileType": "KUBERNETES"
+          },
+          {
+            "failedPolicies": [
+              {
+                "policy": {
+                  "id": "a9fa7aad-923b-4c30-b52d-605a50731303",
+                  "name": "StgPrdIacPolicy",
+                  "description": null,
+                  "type": "IAC",
+                  "builtin": false,
+                  "projects": null,
+                  "policyLifecycleEnforcements": null,
+                  "params": {
+                    "__typename": "cicdscanpolicyparamsiac",
+                    "severityThreshold": "MEDIUM",
+                    "countThreshold": 1,
+                    "ignoredRules": null,
+                    "validatableIgnoredRules": null,
+                    "builtinIgnoreTagsEnabled": false,
+                    "customIgnoreTags": null,
+                    "securityFrameworks": null
+                  }
+                }
+              }
+            ],
+            "resourceName": "metadata.name={{kubernetes-dashboard}}.spec.template.spec.containers.name=kubernetes-dashboard",
+            "fileName": "EKS/harness/k8s-dashboard/useast1/k8s-dashboard-RO.yaml",
+            "lineNumber": 215,
+            "matchContent": " - name: kubernetes-dashboard",
+            "expected": "spec.template.spec.containers.name=kubernetes-dashboard has resources defined",
+            "found": "spec.template.spec.containers.name=kubernetes-dashboard doesn't have resources defined",
+            "fileType": "KUBERNETES"
+          }
+        ]
+      },
+      {
+        "rule": {
+          "id": "e44d3496-c4a1-4be0-8173-4ba336422415",
+          "name": "Container Running With Low UID"
+        },
+        "severity": "MEDIUM",
+        "failedResourceCount": 2,
+        "failedPolicyMatches": [
+          {
+            "policy": {
+              "id": "a9fa7aad-923b-4c30-b52d-605a50731303",
+              "name": "StgPrdIacPolicy",
+              "description": null,
+              "type": "IAC",
+              "builtin": false,
+              "projects": null,
+              "policyLifecycleEnforcements": null,
+              "params": {
+                "__typename": "cicdscanpolicyparamsiac",
+                "severityThreshold": "MEDIUM",
+                "countThreshold": 1,
+                "ignoredRules": null,
+                "validatableIgnoredRules": null,
+                "builtinIgnoreTagsEnabled": false,
+                "customIgnoreTags": null,
+                "securityFrameworks": null
+              }
+            }
+          }
+        ],
+        "matches": [
+          {
+            "failedPolicies": [
+              {
+                "policy": {
+                  "id": "a9fa7aad-923b-4c30-b52d-605a50731303",
+                  "name": "StgPrdIacPolicy",
+                  "description": null,
+                  "type": "IAC",
+                  "builtin": false,
+                  "projects": null,
+                  "policyLifecycleEnforcements": null,
+                  "params": {
+                    "__typename": "cicdscanpolicyparamsiac",
+                    "severityThreshold": "MEDIUM",
+                    "countThreshold": 1,
+                    "ignoredRules": null,
+                    "validatableIgnoredRules": null,
+                    "builtinIgnoreTagsEnabled": false,
+                    "customIgnoreTags": null,
+                    "securityFrameworks": null
+                  }
+                }
+              }
+            ],
+            "resourceName": "metadata.name={{dashboard-metrics-scraper}}.spec.template.spec.containers.name={{dashboard-metrics-scraper}}.securityContext.runAsUser=1001",
+            "fileName": "EKS/harness/k8s-dashboard/useast1/k8s-dashboard-RO.yaml",
+            "lineNumber": 319,
+            "matchContent": " runAsUser: 1001",
+            "expected": "metadata.name={{dashboard-metrics-scraper}}.spec.template.spec.containers.name={{dashboard-metrics-scraper}}.securityContext.runAsUser should be set to a UID >= 10000",
+            "found": "metadata.name={{dashboard-metrics-scraper}}.spec.template.spec.containers.name={{dashboard-metrics-scraper}}.securityContext.runAsUser is set to a low UID",
+            "fileType": "KUBERNETES"
+          },
+          {
+            "failedPolicies": [
+              {
+                "policy": {
+                  "id": "a9fa7aad-923b-4c30-b52d-605a50731303",
+                  "name": "StgPrdIacPolicy",
+                  "description": null,
+                  "type": "IAC",
+                  "builtin": false,
+                  "projects": null,
+                  "policyLifecycleEnforcements": null,
+                  "params": {
+                    "__typename": "cicdscanpolicyparamsiac",
+                    "severityThreshold": "MEDIUM",
+                    "countThreshold": 1,
+                    "ignoredRules": null,
+                    "validatableIgnoredRules": null,
+                    "builtinIgnoreTagsEnabled": false,
+                    "customIgnoreTags": null,
+                    "securityFrameworks": null
+                  }
+                }
+              }
+            ],
+            "resourceName": "metadata.name={{kubernetes-dashboard}}.spec.template.spec.containers.name={{kubernetes-dashboard}}.securityContext.runAsUser=1001",
+            "fileName": "EKS/harness/k8s-dashboard/useast1/k8s-dashboard-RO.yaml",
+            "lineNumber": 246,
+            "matchContent": " runAsUser: 1001",
+            "expected": "metadata.name={{kubernetes-dashboard}}.spec.template.spec.containers.name={{kubernetes-dashboard}}.securityContext.runAsUser should be set to a UID >= 10000",
+            "found": "metadata.name={{kubernetes-dashboard}}.spec.template.spec.containers.name={{kubernetes-dashboard}}.securityContext.runAsUser is set to a low UID",
+            "fileType": "KUBERNETES"
+          }
+        ]
+      },
+      {
+        "rule": {
+          "id": "cd847e3a-fc6b-4eb6-b9f7-21d3654750cd",
+          "name": "NET_RAW Capabilities Not Being Dropped"
+        },
+        "severity": "HIGH",
+        "failedResourceCount": 2,
+        "failedPolicyMatches": [
+          {
+            "policy": {
+              "id": "a9fa7aad-923b-4c30-b52d-605a50731303",
+              "name": "StgPrdIacPolicy",
+              "description": null,
+              "type": "IAC",
+              "builtin": false,
+              "projects": null,
+              "policyLifecycleEnforcements": null,
+              "params": {
+                "__typename": "cicdscanpolicyparamsiac",
+                "severityThreshold": "MEDIUM",
+                "countThreshold": 1,
+                "ignoredRules": null,
+                "validatableIgnoredRules": null,
+                "builtinIgnoreTagsEnabled": false,
+                "customIgnoreTags": null,
+                "securityFrameworks": null
+              }
+            }
+          }
+        ],
+        "matches": [
+          {
+            "failedPolicies": [
+              {
+                "policy": {
+                  "id": "a9fa7aad-923b-4c30-b52d-605a50731303",
+                  "name": "StgPrdIacPolicy",
+                  "description": null,
+                  "type": "IAC",
+                  "builtin": false,
+                  "projects": null,
+                  "policyLifecycleEnforcements": null,
+                  "params": {
+                    "__typename": "cicdscanpolicyparamsiac",
+                    "severityThreshold": "MEDIUM",
+                    "countThreshold": 1,
+                    "ignoredRules": null,
+                    "validatableIgnoredRules": null,
+                    "builtinIgnoreTagsEnabled": false,
+                    "customIgnoreTags": null,
+                    "securityFrameworks": null
+                  }
+                }
+              }
+            ],
+            "resourceName": "metadata.name={{dashboard-metrics-scraper}}.spec.template.spec.containers.name={{dashboard-metrics-scraper}}",
+            "fileName": "EKS/harness/k8s-dashboard/useast1/k8s-dashboard-RO.yaml",
+            "lineNumber": 301,
+            "matchContent": " - name: dashboard-metrics-scraper",
+            "expected": "metadata.name={{dashboard-metrics-scraper}}.spec.template.spec.containers.name={{dashboard-metrics-scraper}}.securityContext.capabilities.drop should be defined",
+            "found": "metadata.name={{dashboard-metrics-scraper}}.spec.template.spec.containers.name={{dashboard-metrics-scraper}}.securityContext.capabilities.drop is undefined",
+            "fileType": "KUBERNETES"
+          },
+          {
+            "failedPolicies": [
+              {
+                "policy": {
+                  "id": "a9fa7aad-923b-4c30-b52d-605a50731303",
+                  "name": "StgPrdIacPolicy",
+                  "description": null,
+                  "type": "IAC",
+                  "builtin": false,
+                  "projects": null,
+                  "policyLifecycleEnforcements": null,
+                  "params": {
+                    "__typename": "cicdscanpolicyparamsiac",
+                    "severityThreshold": "MEDIUM",
+                    "countThreshold": 1,
+                    "ignoredRules": null,
+                    "validatableIgnoredRules": null,
+                    "builtinIgnoreTagsEnabled": false,
+                    "customIgnoreTags": null,
+                    "securityFrameworks": null
+                  }
+                }
+              }
+            ],
+            "resourceName": "metadata.name={{kubernetes-dashboard}}.spec.template.spec.containers.name={{kubernetes-dashboard}}",
+            "fileName": "EKS/harness/k8s-dashboard/useast1/k8s-dashboard-RO.yaml",
+            "lineNumber": 215,
+            "matchContent": " - name: kubernetes-dashboard",
+            "expected": "metadata.name={{kubernetes-dashboard}}.spec.template.spec.containers.name={{kubernetes-dashboard}}.securityContext.capabilities.drop should be defined",
+            "found": "metadata.name={{kubernetes-dashboard}}.spec.template.spec.containers.name={{kubernetes-dashboard}}.securityContext.capabilities.drop is undefined",
+            "fileType": "KUBERNETES"
+          }
+        ]
+      }
+    ],
+    "scanStatistics": {
+      "infoMatches": 4,
+      "lowMatches": 17,
+      "mediumMatches": 20,
+      "highMatches": 2,
+      "criticalMatches": 0,
+      "filesFound": 14,
+      "filesParsed": 14,
+      "queriesLoaded": 773,
+      "queriesExecuted": 2170,
+      "queriesExecutionFailed": 0
+    },
+    "secrets": null,
+    "fileTypes": [
+      "KUBERNETES"
+    ]
+  }
+}

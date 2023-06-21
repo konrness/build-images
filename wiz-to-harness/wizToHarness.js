@@ -122,6 +122,7 @@ if (null != data.result.ruleMatches && data.result.ruleMatches.length > 0) {
 
     let libraries = data.result.ruleMatches.flatMap((item) => {
         return item.matches.map((v) => ({
+            packageName: item.rule.name,
             issueName: item.rule.name,
             issueDescription: v.resourceName + " -- " + v.found,
             issueType: "IAC - " + v.fileType,

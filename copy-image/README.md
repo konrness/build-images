@@ -14,8 +14,8 @@ Uses [Skopeo](https://github.com/containers/skopeo) which is a command line util
 Set the following environment variables:
 
 ```
-PLUGIN_SOURCE=konrness/debug:latest
-PLUGIN_DEST=konrness/debug:latest-copy
+PLUGIN_SOURCE=docker://docker.io/konrness/debug:latest
+PLUGIN_DEST=docker://docker.io/konrness/debug:latest-copy
 
 PLUGIN_SOURCE_USER=
 PLUGIN_SOURCE_PASS=

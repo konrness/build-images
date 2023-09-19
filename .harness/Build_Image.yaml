@@ -141,6 +141,6 @@ pipeline:
   variables:
     - name: name
       type: String
-      value: <+input>.allowedValues(testrail,testrail-validate,debug,harness-delegate-gcloud,wiz-to-harness,kics-to-harness)
+      value: <+input>.allowedValues(copy-image,testrail,testrail-validate,debug,harness-delegate-gcloud,wiz-to-harness,kics-to-harness)
   storeType: ""
   allowStageExecutions: true

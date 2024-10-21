@@ -10,6 +10,8 @@ RUN apk update && apk add --no-cache \
     curl \
     docker-cli
 
+RUN curl -fsSL https://dl.dagger.io/dagger/install.sh | BIN_DIR=/bin sh
+
 ADD ./entrypoint.sh /bin
 RUN chmod +x /bin/entrypoint.sh
 

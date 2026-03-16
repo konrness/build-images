@@ -34,7 +34,7 @@ pipeline:
                   name: Build Image
                   identifier: BuildImage
                   spec:
-                    connectorRef: konrness_Docker_Hub
+                    connectorRef: Konr_Docker_Hub
                     repo: konrness/<+pipeline.variables.name>
                     tags:
                       - 0.<+pipeline.sequenceId>
@@ -76,7 +76,7 @@ pipeline:
                   name: Plugin
                   identifier: Plugin
                   spec:
-                    connectorRef: konrness_Docker_Hub
+                    connectorRef: Konr_Docker_Hub
                     image: konrness/<+pipeline.variables.name>:0.<+pipeline.sequenceId>
                     settings:
                       host: https://konrtest.testrail.io
@@ -135,7 +135,7 @@ pipeline:
             value: konrness
           - name: docker_password
             type: Secret
-            value: konrness_DockerHub
+            value: Konr_Docker_Hub_PAT
           - name: testrail_password
             type: Secret
             value: TestRail_Password

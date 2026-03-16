@@ -1,12 +1,12 @@
 pipeline:
-  projectIdentifier: Konr
-  orgIdentifier: SE_Sandbox
+  projectIdentifier: Konr_Sandbox
+  orgIdentifier: sandbox
   tags: {}
   properties:
     ci:
       codebase:
         connectorRef: Konr_Github
-        repoName: build-images
+        repoName: konrness/build-images
         build: <+input>
   stages:
     - stage:
@@ -16,14 +16,17 @@ pipeline:
         type: CI
         spec:
           cloneCodebase: true
-          infrastructure:
-            type: KubernetesDirect
-            spec:
-              connectorRef: account.cidemo
-              namespace: default
-              automountServiceAccountToken: true
-              nodeSelector: {}
-              os: Linux
+          caching:
+            enabled: true
+            override: false
+          buildIntelligence:
+            enabled: true
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Cloud
+            spec: {}
           execution:
             steps:
               - step:

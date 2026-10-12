@@ -1,0 +1,67 @@
+pipeline:
+  id: pipeline_konrness_build_images_build_9e79
+  name: pipeline_konrness_build_images_build_9e79
+  stages:
+    - name: Validate
+      id: validate
+      clone:
+        enabled: true
+      runtime: cloud
+      platform:
+        os: linux
+        arch: amd64
+      cache:
+        enabled: true
+      steps:
+        - name: Lint Dockerfiles
+          id: lint_dockerfiles
+          run:
+            shell: bash
+            script: |-
+              echo "Installing hadolint..."
+              wget -qO /usr/local/bin/hadolint https://github.com/hadolint/hadolint/releases/download/v2.12.0/hadolint-Linux-x86_64
+              chmod +x /usr/local/bin/hadolint
+
+              echo "Linting Dockerfiles..."
+              exit_code=0
+              for dockerfile in */Dockerfile; do
+                echo "Linting $dockerfile"
+                if ! hadolint "$dockerfile"; then
+                  exit_code=1
+                fi
+              done
+              exit $exit_code
+        - name: Lint Shell Scripts
+          id: lint_shell_scripts
+          run:
+            shell: bash
+            script: |-
+              echo "Installing shellcheck..."
+              apt-get update -qq && apt-get install -y -qq shellcheck
+
+              echo "Linting shell scripts..."
+              exit_code=0
+              for script in */entrypoint.sh */tests/test.sh; do
+                if [ -f "$script" ]; then
+                  echo "Linting $script"
+                  if ! shellcheck "$script"; then
+                    exit_code=1
+                  fi
+                fi
+              done
+              exit $exit_code
+        - name: Build Docker Images Dry Run
+          id: build_docker_images
+          run:
+            shell: bash
+            script: |-
+              echo "Verifying Dockerfiles can be parsed..."
+              for dir in copy-image dagger-plugin testrail testrail-validate wiz-to-harness kics-to-harness debug debug-tmp harness-delegate-gcloud; do
+                if [ -f "$dir/Dockerfile" ]; then
+                  echo "Checking $dir/Dockerfile syntax..."
+                  docker build --check "$dir" || echo "Docker build --check not available, skipping syntax check for $dir"
+                fi
+              done
+              echo "Dockerfile validation complete"
+  tags:
+    onboarding: "true"

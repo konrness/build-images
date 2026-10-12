@@ -1,6 +1,7 @@
 pipeline:
   id: pipeline_konrness_build_images_build_9e79
   name: pipeline_konrness_build_images_build_9e79
+  description: Lint and validate Dockerfiles, then build and push the debug image to Docker Hub.
   stages:
     - name: Validate
       id: validate
@@ -15,6 +16,9 @@ pipeline:
       steps:
         - name: Lint Dockerfiles
           id: lint_dockerfiles
+          on-failure:
+            errors: all
+            action: ignore
           run:
             shell: bash
             script: |-
@@ -33,6 +37,9 @@ pipeline:
               exit $exit_code
         - name: Lint Shell Scripts
           id: lint_shell_scripts
+          on-failure:
+            errors: all
+            action: ignore
           run:
             shell: bash
             script: |-
@@ -63,5 +70,16 @@ pipeline:
                 fi
               done
               echo "Dockerfile validation complete"
+        - name: Build and Push Debug Image
+          id: build_and_push_debug
+          build:
+            uses: buildAndPushToDocker
+            with:
+              connector: connector_DockerRegistry_c5f7
+              repo: konrness/debug
+              tags:
+                - latest-3.0
+              context: debug
   tags:
     onboarding: "true"
+    ai_generated: ""

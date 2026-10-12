@@ -80,6 +80,7 @@ pipeline:
               tags:
                 - latest-3.0
               context: debug
+              dockerfile: debug/Dockerfile
   tags:
     onboarding: "true"
     ai_generated: ""
